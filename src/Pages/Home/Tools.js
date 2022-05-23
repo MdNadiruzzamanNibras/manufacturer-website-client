@@ -12,8 +12,9 @@ const Tools = () => {
         .then(res=>res.json())
         .then(data=> setTools(data))
     },[])
+    console.log('tools', tools);
     const newTools =[...tools].reverse()
-   
+   console.log('new', newTools);
     return (
         <div>
             <h1 className='text-4xl text-red-400 text-center'>Tools Collection</h1>

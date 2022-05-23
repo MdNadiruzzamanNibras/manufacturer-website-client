@@ -28,7 +28,15 @@ const PurchaseTool = () => {
            BuyerPhone: event?.target?.phone?.value,
            quantity: quantity*price
         }
-         console.log(order);
+        fetch('http://localhost:5000/order',{
+            method:'POST',
+            headers:{
+                'content-type': 'application/json'
+            },
+            body:JSON.stringify(order)
+        })
+        .then(res=>res.json())
+        .then(data=>console.log(data))
      }
     return (
         <div class="hero min-h-screen bg-base-200">

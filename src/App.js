@@ -7,7 +7,7 @@ import Home from './Pages/Home/Home';
 
 function App() {
   return (
-    <div className="App">
+    <div  className='max-w-7xl mx-auto'>
      <Routes>
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const SignUp = () => {
@@ -15,6 +16,10 @@ const SignUp = () => {
         console.log(data);
         createUserWithEmailAndPassword(data?.email , data?.password)
     };
+    const navigate= useNavigate()
+    if(user){
+      navigate('/')
+    }
     return (
         <div  className='flex justify-center items-center min-h-screen'>
         <div className="card w-96 bg-primary ">

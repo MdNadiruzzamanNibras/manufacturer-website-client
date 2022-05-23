@@ -5,6 +5,7 @@ import Login from './Pages/Login/Login';
 import SignUp from './Pages/Login/SignUp';
 import Home from './Pages/Home/Home';
 import Navbar from './Pages/Shared/Navbar';
+import PurchaseTool from './Pages/Home/PurchaseTool';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Navbar></Navbar>
      <Routes>
        <Route path='/' element={<Home></Home>}></Route>
+       <Route path='/tools/:id' element={<PurchaseTool></PurchaseTool>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
        <Route path='/signUp' element={<SignUp/>}></Route>
      </Routes>

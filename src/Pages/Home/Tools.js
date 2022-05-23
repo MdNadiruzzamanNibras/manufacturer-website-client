@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
+
+
 import Tool from './Tool';
 
 const Tools = () => {
     const [tools, setTools] = useState([])
+    const [purchase, setPurchase]= useState([])
+    const toolpur= createContext(setPurchase)
     useEffect(()=>{
         fetch('http://localhost:5000/tools')
         .then(res=>res.json())
         .then(data=> setTools(data))
-    },[tools])
+    },[])
     const newTools =[...tools].reverse()
-    console.log(newTools);
+   
     return (
         <div>
             <h1 className='text-4xl text-red-400 text-center'>Tools Collection</h1>

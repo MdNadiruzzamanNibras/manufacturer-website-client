@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
+import { Link, useNavigate } from 'react-router-dom';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -14,6 +15,10 @@ const Login = () => {
         console.log(data);
         signInWithEmailAndPassword(data?.email , data?.password)
     };
+    const navigate= useNavigate()
+    if(user){
+      navigate('/')
+    }
      
     return (
        <div  className='flex justify-center items-center min-h-screen'>
@@ -74,7 +79,8 @@ const Login = () => {
     </form>
     <div class="divider text-white">OR</div>
 
-     
+    <p><small>New to The AutoMobile <Link className='text-secondary' to='/signup'>Create Account</Link></small></p>
+
     </div>
   </div>
   </div>

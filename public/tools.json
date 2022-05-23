@@ -1,0 +1,71 @@
+ 
+    [
+        
+    
+    {
+        "name":"Footpegs",
+        "image":"https://i.ibb.co/sVBnGsv/Footpegs.jpg",
+        "short description":"Motorcycle footpegs are where you keep your feet to give yourself a steady feeling of balance and comfort. When you have a nice set of footpegs where you can keep your feet steady, your ride will feel more comfortable and youll be a bit more confident when it comes time to make turns.",
+        "order quantity": "100",
+        "available quantity":"13000",
+        "price": "70"
+      },
+      {
+        "name":"Clutch",
+        "image":"https://i.ibb.co/bRx9ttd/Clutch.jpg",
+        "short description":"A clutch is a mechanical device that engages and disengages power transmission, especially from a drive shaft (driving shaft) to a driven shaft. In the simplest application, clutches connect and disconnect two rotating shafts (drive shafts or line shafts). In these devices, one shaft is typically attached to an engine and other to power unit (the driving member), while the other shaft (the driven member) provides output power for work. Typically the motions involved are rotary, but linear clutches also exist.In a motor vehicle, the clutch acts as a mechanical linkage between the engine and transmission, and briefly disconnects, or separates the engine from the transmission system. This disconnects the drive wheels whenever the clutch pedal is depressed, allowing the driver to smoothly change gears.",
+        "order quantity": "50",
+        "available quantity":"343",
+        "price": "120"
+      },
+    {
+        "name":"Front Fork",
+        "image":"https://i.ibb.co/P9TDTjR/Front-Fork.jpg",
+        "short description":"When it comes to handling your motorcycle, the front fork is essential. It connects the motorcycle’s front wheel and axle to its frame, holding the front wheel and providing the ability to steer the bike.",
+        "order quantity": "50",
+        "available quantity":"800",
+        "price": "1500"
+      },
+    {
+        "name":"Gas Tank",
+        "image":"https://i.ibb.co/chtjw0z/Gas-Tank.jpg",
+        "short description":"The gas tank in motorcycles serves the same purpose as it does in automobiles: it holds and dispenses gasoline the bike needs to run. Nearly all motorcycles have just one gas tank. The average motorcycle will get about 120 to 200 miles from a tank of gas depending on riding conditions, the size of the tank and the size of the engine.",
+        "order quantity": "50",
+        "available quantity":"500",
+        "price": "1000"
+      },
+    {
+        "name":"Hand Clutch",
+        "image":"https://i.ibb.co/wpmCDDb/Hand-Clutch.jpg",
+        "short description":"This important part facilitates the transfer of power from the motorcycle engine to the transmission and the rear wheel. Put simply, the clutch is the middle man between the engine and transmission.",
+        "order quantity": "50",
+        "available quantity":"2000",
+        "price": "68"
+      },
+    {
+        "name":"Head light",
+        "image":"https://i.ibb.co/vY3YRpG/motorcycle-head-light.png",
+        "short description":"Safety features should be included on every motorcycle – all parts – name list. In addition to illuminating the route ahead during hours of darkness, the headlight on your motorcycle also makes your bike more visible to other drivers at any time of the day or night. Drivers can spot a headlight well before they are able to see a motorcycle or its riders.",
+        "order quantity": "100",
+        "available quantity":"3000",
+        "price": "1500"
+      },
+    {
+        "name":"Spark Plug",
+        "image":"https://i.ibb.co/x5QkrfZ/Spark-Plug.jpg",
+        "short description":"Originally, with the perfect design of gasoline internal combustion engines, if the spark plug is eliminated then the combustion process won’t work. The device delivers electric current from an ignition system to the combustion chamber of spark-ignition engines. Compressed fuel/air mixture is igniting with the component.As we’ve learnt the secret behind the mechanical movement of most automobiles in received from the combustion circle. For the small explosion to take place SI version spark plug is included.",
+        "order quantity": "100",
+        "available quantity":"3000",
+        "price": "1,617"
+      },
+  
+    
+        {
+      "name":"Tries",
+      "image":"https://i.ibb.co/pz5Kcyg/Tires.jpg",
+      "short description":"Tires are another critical item on any motorcycle – all parts – name list. The outer part of wheels, motorcycle tires, are attached to the rims. They play several roles: allow the motorcycle to turn, provide traction, absorb surface irregularities and resist wear. The contact patch is the most important part of a tire, as it is the area that makes contact with the surface of the road.The majority of tires are pneumatically inflated, but some are filled with an unpuncturable tire mousse. They are made of rubber and designed with treads that allow them to maintain their grip on the road even in less-than-ideal conditions. Fat rear tires can be installed for increased torque and fat front tires provide a more comfortable ride.",
+      "order quantity": "100",
+      "available quantity":"4000",
+      "price": "800"
+    }
+]

@@ -72,7 +72,8 @@ const Login = () => {
           
           <input className='btn max-w-xs text-white' type="submit" value="Login" />
     </form>
-    
+    <div class="divider text-white">OR</div>
+
      
     </div>
   </div>

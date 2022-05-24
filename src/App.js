@@ -11,6 +11,7 @@ import DashBoard from './Pages/DashBoard/DashBoard';
 import MyOrder from './Pages/DashBoard/MyOrder';
 import ManagesProducts from './Pages/ManagesProducts/ManagesProducts';
 import Footer from './Pages/Footer';
+import Myprofile from './Pages/DashBoard/Myprofile';
 
 function App() {
   return (
@@ -24,7 +25,8 @@ function App() {
        <Route path='/manageproducts' element={<ManagesProducts></ManagesProducts>}></Route>
        <Route path='/dashboard' element={
          <RequireAuth><DashBoard/></RequireAuth>}>
-            <Route index element={<MyOrder></MyOrder>}></Route>
+            <Route index element={<Myprofile></Myprofile>}></Route>
+            <Route path='order' element={<MyOrder></MyOrder>}></Route>
             </Route>
      </Routes>
      <Footer></Footer>

@@ -10,6 +10,7 @@ import RequireAuth from './Pages/Login/RequireAuth';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import MyOrder from './Pages/DashBoard/MyOrder';
 import ManagesProducts from './Pages/ManagesProducts/ManagesProducts';
+import Footer from './Pages/Footer';
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
             <Route index element={<MyOrder></MyOrder>}></Route>
             </Route>
      </Routes>
+     <Footer></Footer>
     </div>
   );
 }

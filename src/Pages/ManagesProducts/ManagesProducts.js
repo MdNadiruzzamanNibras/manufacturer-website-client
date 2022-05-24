@@ -1,11 +1,24 @@
 import React from 'react';
+import { toast } from 'react-toastify';
 import useTools from '../../Hooks/useTools';
 
 const ManagesProducts = () => {
     const [tools, setTools]= useTools()
     const deletetool =id=>{
-        console.log(id);
-        
+        const processed = window.confirm('Are you sure delete the item')
+        if(processed){
+            const url= `http://localhost:5000/tools/${id}`
+            fetch(url,{
+                method:'DELETE',
+               
+            })
+            .then(res=> res.json())
+            .then(data=>{
+              toast(data);
+             const remaining = tools.filter(tool => tool._id !== id);
+             setTools(remaining);
+            })
+        }
  
      }
     return (
@@ -23,7 +36,7 @@ const ManagesProducts = () => {
                   <p className='text-lg'>Available:{tool.availableQuantity}</p>
                   <p className='text-lg'>Price: ${tool.price}</p>
                   <p className='text-xs'>{tool.shortDescription}</p>
-                  <button onClick={()=>deletetool(tool._id)} class="btn w-64 rounded-full">Button</button>
+                  <button onClick={()=>deletetool(tool._id)} class="btn w-64 rounded-full">Delete</button>
 
                 </div>
               </div>

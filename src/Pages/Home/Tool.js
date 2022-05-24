@@ -8,7 +8,7 @@ const Tool = ({tool}) => {
         navigate(`/tools/${id}`)
     }
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card w-96 bg-base-100 my-6 shadow-xl">
   <figure class="px-10 pt-10">
     <img src={image} alt="tool" class="rounded-xl" />
   </figure>

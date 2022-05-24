@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
 import { Link, useNavigate } from 'react-router-dom';
+import useToken from '../../Hooks/useToken';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [
@@ -16,10 +17,11 @@ const Login = () => {
         signInWithEmailAndPassword(data?.email , data?.password)
     };
     const navigate= useNavigate()
-    if(user){
-      navigate('/')
+    const [token]= useToken(user)
+    if(token){
+    navigate('/')
     }
-     
+ console.log(user);
     return (
        <div  className='flex justify-center items-center min-h-screen'>
             <div className="card w-96 bg-primary ">
@@ -79,7 +81,7 @@ const Login = () => {
     </form>
     <div class="divider text-white">OR</div>
 
-    <p><small>New to The AutoMobile <Link className='text-secondary' to='/signup'>Create Account</Link></small></p>
+    <p><small>New to The AutoMobile <Link className='text-white' to='/signup'>Create Account</Link></small></p>
 
     </div>
   </div>

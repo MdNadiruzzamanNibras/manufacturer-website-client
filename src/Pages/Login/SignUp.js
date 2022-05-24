@@ -1,24 +1,31 @@
 import React from 'react';
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useToken from '../../Hooks/useToken';
+import SocialLogin from './SocialLogin';
 
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [updateProfile, updating, UpError] = useUpdateProfile(auth);
+    
     const [
-        createUserWithEmailAndPassword,
-        user,
-        loading,
-        error,
-      ] = useCreateUserWithEmailAndPassword(auth);
-    const onSubmit = data => {
-        console.log(data);
-        createUserWithEmailAndPassword(data?.email , data?.password)
-    };
+      createUserWithEmailAndPassword,
+      user,
+      loading,
+      error,
+    ] = useCreateUserWithEmailAndPassword(auth);
+  const onSubmit =async data => {
+     await createUserWithEmailAndPassword(data?.email, data?.password)
+      await updateProfile({ displayName : data?.name });
+      
+  };
+    const [token] = useToken(user)
     const navigate= useNavigate()
-    if(user){
-      navigate('/')
+    console.log(user);
+    if(token){
+     console.log(user);
     }
     return (
         <div  className='flex justify-center items-center min-h-screen'>
@@ -34,7 +41,13 @@ const SignUp = () => {
                             type="name"
                             placeholder="Your Name"
                             className="input input-bordered w-full max-w-xs"
-                            {...register("name")}
+                            {...register("name", {
+                              required: {
+                                 value: true,
+                                 message:'Name is required'
+                              }
+                              
+                          })}
                         />
       <label className="label">
     
@@ -90,11 +103,11 @@ const SignUp = () => {
       </div>
     
       
-      <input className='btn max-w-xs text-white' type="submit" value="Login" />
+      <input className='btn max-w-xs text-white' type="submit" value="Signup" />
 </form>
-<div class="divider bg-white">OR</div>
+<div class="divider text-white">OR</div>
 
- 
+ <SocialLogin></SocialLogin>
 </div>
 </div>
 </div>

@@ -20,8 +20,9 @@ const PurchaseTool = () => {
         const price = tool.price
          const name = tool.name
         const quantity = event?.target?.quantity?.value
+        console.log(quantity);
         const order={
-            tooId:tool._id,
+            
            toolName :name,
            BuyerName:user?.displayName,
            BuyerEmail:user?.email,

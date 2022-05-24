@@ -9,6 +9,7 @@ import PurchaseTool from './Pages/Home/PurchaseTool';
 import RequireAuth from './Pages/Login/RequireAuth';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import MyOrder from './Pages/DashBoard/MyOrder';
+import ManagesProducts from './Pages/ManagesProducts/ManagesProducts';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
        <Route path='/tools/:id' element={<RequireAuth><PurchaseTool></PurchaseTool></RequireAuth>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
        <Route path='/signUp' element={<SignUp/>}></Route>
+       <Route path='/manageproducts' element={<ManagesProducts></ManagesProducts>}></Route>
        <Route path='/dashboard' element={
          <RequireAuth><DashBoard/></RequireAuth>}>
             <Route index element={<MyOrder></MyOrder>}></Route>

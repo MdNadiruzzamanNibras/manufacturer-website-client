@@ -14,6 +14,7 @@ const Navbar = () => {
    
     const NavbarLink = <>
         <li><Link to="/">Home</Link></li>
+        <li><Link to="/manageproducts">ManageProduct</Link></li>
         
          {
             user && <li><Link to="/dashboard">DashBoard</Link></li>

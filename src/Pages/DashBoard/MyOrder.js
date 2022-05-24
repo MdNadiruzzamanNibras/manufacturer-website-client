@@ -1,27 +1,42 @@
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
     const [orders, setorders]= useState([])
-    
+    const navigate =useNavigate()
     const [user] = useAuthState(auth);
+   
     useEffect(()=>{
-       
-       fetch(`http://localhost:5000/order?email=${user?.email}`,{
+       if(user)
+       {fetch(`http://localhost:5000/order?email=${user?.email}`,{
          method:'GET',
          headers:{
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
          }
        })
-        .then(res=>res.json())
-        .then(data=> setorders(data))
-    },[user?.email])
-   console.log(orders);
+       .then(res => {
+        console.log('res', res);
+        if (res.status === 401 || res.status === 403) {
+            signOut(auth);
+            localStorage.removeItem('accessToken');
+            navigate('/');
+        }
+        return res.json()
+    })
+    .then(data => {
+
+      setorders(data);
+    });
+  }
+        
+  },[user])
+   
     return (
         <div>
-            <h3>My appointment:{orders?.length}</h3>
+            <h3>My order:{orders?.length}</h3>
             <div class="overflow-x-auto">
   <table class="table w-full">
     {/* <!-- head --> */}

@@ -23,7 +23,7 @@ const MakeAdmin = () => {
                            
                         </tr>
                     </thead>
-                    <tbody className='table w-full'>
+                    <tbody >
                        {
                            users.map(user=><User
                            key={user._id}

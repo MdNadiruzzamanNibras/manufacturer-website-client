@@ -15,6 +15,7 @@ import Footer from './Pages/Footer';
 import Myprofile from './Pages/DashBoard/Myprofile';
 import AddReview from './Pages/DashBoard/AddReview';
 import MakeAdmin from './Pages/DashBoard/MakeAdmin';
+import ManageOrder from './Pages/DashBoard/ManageOrder';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
             <Route path='order' element={<MyOrder></MyOrder>}></Route>
             <Route path='addReview' element={<AddReview></AddReview>}></Route>
             <Route path='makeAdmin' element={<MakeAdmin/>}></Route>
+            <Route path='allOrders' element={<ManageOrder/>}></Route>
             </Route>
      </Routes>
      <ToastContainer/>

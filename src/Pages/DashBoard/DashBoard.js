@@ -24,6 +24,7 @@ const DashBoard = () => {
                     </>
                     }
                     <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
+                    <li><Link to="/dashboard/allOrders">Manage All Orders</Link></li>
                    
                 </ul>
 

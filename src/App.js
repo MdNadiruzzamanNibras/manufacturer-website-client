@@ -12,6 +12,7 @@ import MyOrder from './Pages/DashBoard/MyOrder';
 import ManagesProducts from './Pages/ManagesProducts/ManagesProducts';
 import Footer from './Pages/Footer';
 import Myprofile from './Pages/DashBoard/Myprofile';
+import AddReview from './Pages/DashBoard/AddReview';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
          <RequireAuth><DashBoard/></RequireAuth>}>
             <Route index element={<Myprofile></Myprofile>}></Route>
             <Route path='order' element={<MyOrder></MyOrder>}></Route>
+            <Route path='addReview' element={<AddReview></AddReview>}></Route>
             </Route>
      </Routes>
      <Footer></Footer>

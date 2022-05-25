@@ -5,7 +5,7 @@ import useTools from '../../Hooks/useTools';
 const ManagesProducts = () => {
     const [tools, setTools]= useTools()
     const deletetool =id=>{
-        const processed = window.confirm('Are you sure delete the item')
+        const processed = window.confirm('Are you sure delete the tool')
         if(processed){
             const url= `http://localhost:5000/tools/${id}`
             fetch(url,{

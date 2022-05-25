@@ -2,6 +2,7 @@ import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
@@ -18,6 +19,7 @@ const MyOrder = () => {
          }
        })
        .then(res => {
+       
         console.log('res', res);
         if (res.status === 401 || res.status === 403) {
             signOut(auth);
@@ -27,13 +29,29 @@ const MyOrder = () => {
         return res.json()
     })
     .then(data => {
-
+    console.log();
       setorders(data);
     });
   }
         
   },[user])
-   
+  const cancelOrder =id=>{
+    const processed = window.confirm('Are you sure delete the order')
+    if(processed){
+        const url= `http://localhost:5000/order/${id}`
+        fetch(url,{
+            method:'DELETE',
+           
+        })
+        .then(res=> res.json())
+        .then(data=>{
+          toast(data);
+         const remaining = orders.filter(order => order._id !== id);
+         setorders(remaining);
+        })
+    }
+
+ }
     return (
         <div>
             <h3>My order:{orders?.length}</h3>
@@ -48,18 +66,22 @@ const MyOrder = () => {
         <th>Product</th>
         <th>Price</th>
         <th>Payment</th>
+        <th>Cancel </th>
         
       </tr>
     </thead>
     <tbody>
       {/* <!-- row 1 --> */}
       {
-          orders?.map((order, index)=><tr  key={order._id}>
+         orders && orders?.map((order, index)=><tr  key={order._id}>
             <th>{index+1}</th>
             <td>{order.BuyerName}</td>
             <td>{order.BuyerEmail}</td>
             <td>{order.toolName}</td>
             <td>{order.quantity}</td>
+            <td><button onClick={()=>cancelOrder(order._id)} className='btn btn-success btn-sm mt-4' c>
+                  Cancel
+                </button></td>
             <td>
             {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
             {(order.price && order.paid) && <div>

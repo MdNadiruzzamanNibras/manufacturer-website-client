@@ -23,7 +23,7 @@ const DashBoard = () => {
                       <li><Link to="/dashboard/addReview">Add a review</Link></li>
                     </>
                     }
-                    
+                    <li><Link to="/dashboard/makeAdmin">Make Admin</Link></li>
                    
                 </ul>
 

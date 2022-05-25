@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import Login from './Pages/Login/Login';
@@ -9,10 +8,13 @@ import PurchaseTool from './Pages/Home/PurchaseTool';
 import RequireAuth from './Pages/Login/RequireAuth';
 import DashBoard from './Pages/DashBoard/DashBoard';
 import MyOrder from './Pages/DashBoard/MyOrder';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import ManagesProducts from './Pages/ManagesProducts/ManagesProducts';
 import Footer from './Pages/Footer';
 import Myprofile from './Pages/DashBoard/Myprofile';
 import AddReview from './Pages/DashBoard/AddReview';
+import MakeAdmin from './Pages/DashBoard/MakeAdmin';
 
 function App() {
   return (
@@ -29,8 +31,10 @@ function App() {
             <Route index element={<Myprofile></Myprofile>}></Route>
             <Route path='order' element={<MyOrder></MyOrder>}></Route>
             <Route path='addReview' element={<AddReview></AddReview>}></Route>
+            <Route path='makeAdmin' element={<MakeAdmin/>}></Route>
             </Route>
      </Routes>
+     <ToastContainer/>
      <Footer></Footer>
     </div>
   );

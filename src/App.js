@@ -19,6 +19,7 @@ import ManageOrder from './Pages/DashBoard/ManageOrder';
 import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddProducts from './Pages/DashBoard/AddProducts';
 import PurchaseForm from './Pages/Home/PurchaseForm';
+import OrderPayment from './Pages/DashBoard/OrderPayment';
 
 function App() {
   return (
@@ -28,13 +29,14 @@ function App() {
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/tools/:id' element={<RequireAuth><PurchaseTool></PurchaseTool></RequireAuth>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
-       <Route path='/purchaseForm' element={<PurchaseForm></PurchaseForm>}></Route>
+       <Route path='/purchaseForm' element={<RequireAuth><PurchaseForm></PurchaseForm></RequireAuth>}></Route>
        <Route path='/signUp' element={<SignUp/>}></Route>
        <Route path='/manageproducts' element={<RequireAdmin><ManagesProducts></ManagesProducts></RequireAdmin>}></Route>
        <Route path='/dashboard' element={
          <RequireAuth><DashBoard/></RequireAuth>}>
             <Route index element={<Myprofile></Myprofile>}></Route>
             <Route path='order' element={<MyOrder></MyOrder>}></Route>
+            <Route path='payment/:id' element={<OrderPayment></OrderPayment>}></Route>
             <Route path='addReview' element={<AddReview></AddReview>}></Route>
             <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
             <Route path='allOrders' element={<RequireAdmin><ManageOrder/></RequireAdmin>}></Route>

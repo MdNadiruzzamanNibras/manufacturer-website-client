@@ -2,6 +2,7 @@ import React from 'react';
 import { useQuery } from 'react-query';
 import User from './User';
 
+
 const MakeAdmin = () => {
     const {data:users, isLoading,refetch}= useQuery('users',()=>fetch('http://localhost:5000/user',{
         method: 'GET',
@@ -18,7 +19,7 @@ const MakeAdmin = () => {
                     <thead>
                         <tr>
                             <th>Index</th>
-                            <th>Name</th>
+                            <th>Email</th>
                             <th>Make Admin</th>
                            
                         </tr>

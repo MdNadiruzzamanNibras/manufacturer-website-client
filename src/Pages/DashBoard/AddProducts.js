@@ -18,29 +18,34 @@ const AddProducts = () => {
          })
           .then(res=> res.json())
           .then(result=>{
-              console.log('imgage', result.data.url);
              if(result.success){
-                 const img = result.data.url;
+                 const image = result.data.url;
                  const tool = {
                      name: data.name,
                      shortDescription: data.shortDescription,
                      orderQuantity:data.orderQuantity,
                      availableQuantity:data.availableQuantity,
                      price:data.price,
-                     img: img
+                     image: image
                  }
              
                 fetch('http://localhost:5000/tools',{
                     method:'POST',
                     headers: {
                      'content-type': 'application/json',
-                    //  authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                     authorization: `Bearer ${localStorage.getItem('accessToken')}`
                  },
                  body: JSON.stringify(tool)
                 }) 
                 .then(res=> res.json())
                 .then(inserted=>{
-                    console.log(inserted);
+                    if(inserted.insertedId){
+                        toast.success('Great add a products')
+                       reset()
+                    }
+                    else{
+                        toast.error('Oh no try again later')
+                    }
                 })
              }
              

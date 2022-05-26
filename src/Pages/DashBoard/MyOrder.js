@@ -33,11 +33,14 @@ const MyOrder = () => {
         
   },[user])
   const cancelOrder =id=>{
-    const processed = window.confirm('Are you sure delete the order')
+    const processed = window.confirm('Are you sure cancel the order')
     if(processed){
         const url= `http://localhost:5000/order/${id}`
         fetch(url,{
             method:'DELETE',
+            headers: {
+              authorization: `Bearer ${localStorage.getItem('accessToken')}`
+          },
            
         })
         .then(res=> res.json())
@@ -75,16 +78,13 @@ const MyOrder = () => {
             <td>{order.BuyerName}</td>
             <td>{order.BuyerEmail}</td>
             <td>{order.toolName}</td>
-            <td>{order.quantity}</td>
+            <td>{order.price}</td>
             
             <td>
-            {(order.price && !order.paid) && ><button className='btn btn-xs btn-success'>pay</button>}
-            {(order.price && order.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
-                                    </div>}
+            {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+           
             </td>
-            <td><button onClick={()=>cancelOrder(order._id)} className='btn btn-success btn-sm mt-4' c>
+            <td><button onClick={()=>cancelOrder(order._id)} className='btn  btn-sm mt-4' >
                   Cancel
                 </button></td>
           </tr>)

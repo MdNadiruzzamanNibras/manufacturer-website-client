@@ -1,10 +1,11 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const  PurchaseForm = ({tool,setTool}) => {
     const [user, loading, error] = useAuthState(auth);
-    console.log(user);
+   
      const handleOrder=event=>{
         event.preventDefault();
         const price = tool?.price
@@ -18,21 +19,32 @@ const  PurchaseForm = ({tool,setTool}) => {
            BuyerName:user?.displayName,
            BuyerEmail:user?.email,
            BuyerPhone: event?.target?.phone?.value,
-           quantity: quantity*price
+           price: quantity*price
         }
         fetch('http://localhost:5000/order',{
             method:'POST',
-            headers:{
-                'content-type': 'application/json'
+            headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body:JSON.stringify(order)
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            if(data.insertedId){
+                toast.success('Great add your order and see my order page')
+            }
+            else{
+                toast.error('Something is Wrong')
+                
+            }
+
+        })
      }
     
     return (
-        <div class="card w-96 bg-base-100 shadow-xl">
+        <div class="card w-96 mx-auto bg-base-100 shadow-xl">
+            <h2 className='text-2xl text-center mt-2 font-bold text-purple-700'>Purchase Form</h2>
   <div class="card-body">
    <form onSubmit={handleOrder}>
    <input type="text" value={tool?.name}  className="input input-bordered w-full max-w-xs" /><br />

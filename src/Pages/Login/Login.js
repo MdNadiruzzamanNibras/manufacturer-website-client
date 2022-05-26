@@ -2,10 +2,14 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init'
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useToken from '../../Hooks/useToken';
+import SocialLogin from './SocialLogin';
 const Login = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
     const [
         signInWithEmailAndPassword,
         user,
@@ -13,13 +17,13 @@ const Login = () => {
         error,
       ] = useSignInWithEmailAndPassword(auth);
     const onSubmit = data => {
-        console.log(data);
         signInWithEmailAndPassword(data?.email , data?.password)
     };
-    const navigate= useNavigate()
+    
     const [token]= useToken(user)
+    console.log(token);
     if(token){
-    navigate('/')
+      navigate(from, { replace: true });
     }
  console.log(user);
     return (
@@ -80,7 +84,7 @@ const Login = () => {
           <input className='btn max-w-xs text-white' type="submit" value="Login" />
     </form>
     <div class="divider text-white">OR</div>
-
+    <SocialLogin></SocialLogin>
     <p><small>New to The AutoMobile <Link className='text-white' to='/signup'>Create Account</Link></small></p>
 
     </div>

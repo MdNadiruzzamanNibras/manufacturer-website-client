@@ -1,11 +1,15 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 
 
 const SocialLogin = () => {
     const [user, setUser] =useState({})
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
 
   const googleProvider = new GoogleAuthProvider();
   
@@ -20,15 +24,19 @@ const SocialLogin = () => {
      console.log('error', error)
    })
   }
-  
+  console.log(user);
   const [token]= useToken(user)
   if(token){
-      console.log(user);
+    navigate(from, { replace: true });
   }
   return (
    <div>
+     <button
+        onClick={handleGoogleSignIn}
+        className='btn w-full max-w-xs text-white'>
+            Google sign in</button>
       
-      <button onClick={handleGoogleSignIn}>Google sign in</button>
+     
      
       
      

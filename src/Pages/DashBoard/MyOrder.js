@@ -76,16 +76,17 @@ const MyOrder = () => {
             <td>{order.BuyerEmail}</td>
             <td>{order.toolName}</td>
             <td>{order.quantity}</td>
-            <td><button onClick={()=>cancelOrder(order._id)} className='btn btn-success btn-sm mt-4' c>
-                  Cancel
-                </button></td>
+            
             <td>
-            {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+            {(order.price && !order.paid) && ><button className='btn btn-xs btn-success'>pay</button>}
             {(order.price && order.paid) && <div>
                                         <p><span className='text-success'>Paid</span></p>
                                         <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
                                     </div>}
             </td>
+            <td><button onClick={()=>cancelOrder(order._id)} className='btn btn-success btn-sm mt-4' c>
+                  Cancel
+                </button></td>
           </tr>)
       }
       

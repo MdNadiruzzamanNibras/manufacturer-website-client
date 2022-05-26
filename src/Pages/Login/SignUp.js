@@ -1,7 +1,7 @@
 import React from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 import SocialLogin from './SocialLogin';
@@ -9,7 +9,9 @@ import SocialLogin from './SocialLogin';
 const SignUp = () => {
     const { register, formState: { errors }, handleSubmit } = useForm();
     const [updateProfile, updating, UpError] = useUpdateProfile(auth);
-    
+    const navigate = useNavigate()
+    const location = useLocation()
+    let from = location.state?.from?.pathname || "/";
     const [
       createUserWithEmailAndPassword,
       user,
@@ -22,10 +24,10 @@ const SignUp = () => {
       
   };
     const [token] = useToken(user)
-    const navigate= useNavigate()
+
     console.log(user);
     if(token){
-     console.log(user);
+      navigate(from, { replace: true });
     }
     return (
         <div  className='flex justify-center items-center min-h-screen'>

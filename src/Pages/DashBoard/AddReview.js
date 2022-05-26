@@ -1,5 +1,6 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const AddReview = () => {
@@ -19,7 +20,12 @@ const AddReview = () => {
             body:JSON.stringify({review})
         })
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>{
+            if(data.insertedId){
+                toast.success('Thanks for your Review')
+            }
+        })
+        event.reset()
     }
     return (
         <div>
@@ -29,7 +35,7 @@ const AddReview = () => {
           <div class="card-body">
           <h2 className='text-2xl text-center my-2 text-white'>Add a Review</h2>
            <form onSubmit={reviewSubmit}>
-            <input type="text" name="name" placeholder="Your Name"  className="input input-bordered w-full max-w-xs" /><br />
+            <input type="text" name="name" placeholder="Your Name"  className="input input-bordered w-full text-black max-w-xs" /><br />
             <textarea class="textarea text-black"  name="review" placeholder="Review"></textarea><br />
             <input type="number" name="rating" placeholder="Rating" className="input input-bordered w-full text-black max-w-xs" /><br />
             <div class="card-actions justify-end">

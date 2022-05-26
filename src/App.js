@@ -20,6 +20,7 @@ import RequireAdmin from './Pages/Login/RequireAdmin';
 import AddProducts from './Pages/DashBoard/AddProducts';
 import PurchaseForm from './Pages/Home/PurchaseForm';
 import OrderPayment from './Pages/DashBoard/OrderPayment';
+import NotFound from './Pages/NotFound/NotFound';
 
 function App() {
   return (
@@ -42,6 +43,7 @@ function App() {
             <Route path='allOrders' element={<RequireAdmin><ManageOrder/></RequireAdmin>}></Route>
             <Route path='addProducts' element={<RequireAdmin><AddProducts/></RequireAdmin>}></Route>
             </Route>
+            <Route path='*' element={<NotFound/>}></Route>
      </Routes>
      <ToastContainer/>
      <Footer></Footer>

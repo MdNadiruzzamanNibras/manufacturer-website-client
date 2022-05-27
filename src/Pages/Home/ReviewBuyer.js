@@ -6,11 +6,8 @@ const ReviewBuyer = () => {
     useEffect(()=>{
         fetch('http://localhost:5000/customerReview')
         .then(res=>res.json())
-        .then(data=> {console.log(data)
-        
-        setReviews(data)})
+        .then(data=>setReviews(data))
     },[])
-    console.log(reviews);
     return (
         <div>
             <h2 className='text-4xl text-indigo-700 text-center my-2'>Customer Review</h2>

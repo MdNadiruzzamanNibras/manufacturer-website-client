@@ -5,27 +5,28 @@ import auth from '../../firebase.init';
 
 const  PurchaseForm = ({tool,setTool}) => {
     const [user, loading, error] = useAuthState(auth);
-    const min = tool?.orderQuantity
-  const max = tool?.availableQuantity
-  const [value, setValue] = useState(1);
-  const [count, setCount] = useState(0);
-  const [Serror, setError] = useState(null);
-  const Qty =100
-  function handlePlus() {
-    if (count < Qty) {
-      setCount(count + 1);
-      setError(null);
-    } else {
-      setError("No stock");
-    }
-  }
-  const handleChange = event => {
-    const value = Math.max(min, Math.min(max, Number(event.target.value)));
-    setValue(value);}
+  //   const min = tool?.orderQuantity
+  // const max = tool?.availableQuantity
+  // const [value, setValue] = useState(1);
+  // const [count, setCount] = useState(0);
+  // const [Serror, setError] = useState(null);
+ 
+  // function handlePlus() {
+  //   if (count < Qty) {
+  //     setCount(count + 1);
+  //     setError(null);
+  //   } else {
+  //     setError("No stock");
+  //   }
+  // }
+  // const handleChange = event => {
+  //   const value = Math.max(min, Math.min(max, Number(event.target.value)));
+  //   setValue(value);}
      const handleOrder=event=>{
         event.preventDefault();
         const price = tool?.price
          const name = tool?.name
+         
          const phone = event?.target?.phone?.value
         const quantity = event?.target?.quantity?.value
         console.log(quantity,phone, price, name);
@@ -68,7 +69,7 @@ const  PurchaseForm = ({tool,setTool}) => {
    <input type="text" value={user?.displayName}   className="input input-bordered w-full max-w-xs" /><br />
    <input type="text" value={user?.email}   className="input input-bordered w-full max-w-xs" /><br />
    <input type="number" name="phone" placeholder="Phone Number"  className="input input-bordered w-full max-w-xs" /><br />
-  <input type="number" value={value} onChange={handleChange} name="quantity" placeholder="Amount of tool"  className="input input-bordered  max-w-xs" /> <br />
+  <input type="number"  name="quantity" placeholder="Amount of tool"  className="input input-bordered  max-w-xs" /> <br />
       <input type="submit"   className='btn w-full max-w-xs text-white' value="Order Now" />      
       
    </form>

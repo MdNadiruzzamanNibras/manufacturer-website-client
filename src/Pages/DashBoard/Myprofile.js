@@ -1,10 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 
 const Myprofile = () => {
     const [user] = useAuthState(auth);
+    const [profile, setprofile]=useState([])
+    useEffect(()=>{
+        if(user)
+       {fetch(`http://localhost:5000/myProfile?email=${user?.email}`,{
+         method:'GET',
+         headers:{
+           'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+         }
+       })
+    .then(res=>res.json())
+    .then(data => {
+      console.log(data);
+    });
+  }
+    },[])
+   
     const navigate =useNavigate()
     const updateNavigate=()=>{
         navigate('/update')

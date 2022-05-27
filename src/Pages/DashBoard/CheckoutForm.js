@@ -117,18 +117,18 @@ const CheckoutForm = ({orderId}) => {
                         },
                     }}
                 />
-                <button className='btn btn-success btn-sm mt-4' type="submit" disabled={!useStripe ||  !clientSecret }>
+                <button  className='btn btn-success btn-sm mt-4' type="submit" disabled={!useStripe ||  !clientSecret }>
                     Pay
                 </button>
             </form>
             {
-                cardError && <p className='text-red-500'>{cardError}</p>
+                cardError && <p  className='text-red-500'>{cardError}</p>
             }
             {
                
-                success && <div className='text-green-500'>
+                success && <div  className='text-green-500'>
                     <p>{success}  </p>
-                    <p>Your transaction Id: <span className="text-orange-500 font-bold">{transactionId}</span> </p>
+                    <p>Your transaction Id: <span  className="text-orange-500 font-bold">{transactionId}</span> </p>
                 </div>
             }
         </>

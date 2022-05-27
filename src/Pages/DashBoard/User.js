@@ -28,7 +28,7 @@ const User = ({user,refetch}) => {
             <tr>
             <td>1</td>
             <td>{email}</td>
-            <td>{role !== 'admin' && <button onClick={makeAdmin} class="btn btn-xs">Make Admin</button>}</td>
+            <td>{role !== 'admin' && <button onClick={makeAdmin} className="btn btn-xs">Make Admin</button>}</td>
 
             
         </tr>

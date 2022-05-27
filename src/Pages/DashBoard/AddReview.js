@@ -30,16 +30,16 @@ const AddReview = () => {
     return (
         <div>
            
-            <div class="card w-96  mx-auto min-h-full shadow-xl image-full">
+            <div className="card w-96  mx-auto min-h-full shadow-xl image-full">
               
-          <div class="card-body">
-          <h2 className='text-2xl text-center my-2 text-white'>Add a Review</h2>
+          <div className="card-body">
+          <h2  className='text-2xl text-center my-2 text-white'>Add a Review</h2>
            <form onSubmit={reviewSubmit}>
-            <input type="text" name="name" placeholder="Your Name"  className="input input-bordered w-full text-black max-w-xs" /><br />
-            <textarea class="textarea text-black"  name="review" placeholder="Review"></textarea><br />
-            <input type="number" name="rating" placeholder="Rating" className="input input-bordered w-full text-black max-w-xs" /><br />
-            <div class="card-actions justify-end">
-            <input class="btn btn-primary" type="submit" value="Submit" />
+            <input type="text" name="name" placeholder="Your Name"   className="input input-bordered w-full text-black max-w-xs" /><br />
+            <textarea className="textarea text-black"  name="review" placeholder="Review"></textarea><br />
+            <input type="number" name="rating" placeholder="Rating"  className="input input-bordered w-full text-black max-w-xs" /><br />
+            <div className="card-actions justify-end">
+            <input className="btn btn-primary" type="submit" value="Submit" />
             </div>
             </form>
     

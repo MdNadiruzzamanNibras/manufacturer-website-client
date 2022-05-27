@@ -21,17 +21,17 @@ const PurchaseTool = () => {
     ,[id])
     return (
         <div>
-          <div class="hero min-h-screen bg-base-200">
-  <div class="hero-content flex-col lg:flex-row">
-    <img src={image} class="max-w-sm rounded-lg shadow-2xl" />
+          <div className="hero min-h-screen bg-base-200">
+  <div className="hero-content flex-col lg:flex-row">
+    <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
     <div>
-      <h1 class="text-5xl font-bold">{name}</h1>
-      <p className='text-lg'>Minimum Order:{orderQuantity} </p>
-    <p className='text-lg'>Available:{availableQuantity}</p>
-    <p className='text-lg'>Price: ${price}</p>
-    <p className='text-xs'>{shortDescription}</p>
+      <h1 className="text-5xl font-bold">{name}</h1>
+      <p  className='text-lg'>Minimum Order:{orderQuantity} </p>
+    <p  className='text-lg'>Available:{availableQuantity}</p>
+    <p  className='text-lg'>Price: ${price}</p>
+    <p  className='text-xs'>{shortDescription}</p>
     
-      <button onClick={handleNav} class="btn btn-primary">Get Started</button>
+      <button onClick={handleNav} className="btn btn-primary">Get Started</button>
      
     </div>
   </div>

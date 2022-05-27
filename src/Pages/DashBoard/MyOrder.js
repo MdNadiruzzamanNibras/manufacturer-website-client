@@ -55,8 +55,8 @@ const MyOrder = () => {
     return (
         <div>
             <h3>My order:{orders?.length}</h3>
-            <div class="overflow-x-auto">
-  <table class="table w-full">
+            <div className="overflow-x-auto">
+  <table className="table w-full">
     {/* <!-- head --> */}
     <thead>
       <tr>
@@ -81,13 +81,13 @@ const MyOrder = () => {
             <td>{order.price}</td>
             
             <td>
-            {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button className='btn btn-xs btn-success'>pay</button></Link>}
+            {(order.price && !order.paid) && <Link to={`/dashboard/payment/${order._id}`}><button  className='btn btn-xs btn-success'>pay</button></Link>}
             {(order.price && order.paid) && <div>
-                                        <p><span className='text-success'>Paid</span></p>
-                                        <p>Transaction id: <span className='text-success'>{order.transactionId}</span></p>
+                                        <p><span  className='text-success'>Paid</span></p>
+                                        <p>Transaction id: <span  className='text-success'>{order.transactionId}</span></p>
                                     </div>}
             </td>
-            <td><button onClick={()=>cancelOrder(order._id)} className='btn  btn-sm mt-4' >
+            <td><button onClick={()=>cancelOrder(order._id)}  className='btn  btn-sm mt-4' >
                   Cancel
                 </button></td>
           </tr>)

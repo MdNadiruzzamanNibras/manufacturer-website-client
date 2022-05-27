@@ -15,7 +15,7 @@ const MakeAdmin = () => {
     }
     return (
             <div >
-                <table class="table ">
+                <table className="table ">
                     <thead>
                         <tr>
                             <th>Index</th>

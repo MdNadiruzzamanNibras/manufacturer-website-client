@@ -21,11 +21,14 @@ const Login = () => {
     };
     
     const [token]= useToken(user)
-    console.log(token);
+   
     if(token){
       navigate(from, { replace: true });
     }
- console.log(user);
+    if(loading){
+      return <p>Loading...</p>
+    }
+
     return (
        <div  className='flex justify-center items-center min-h-screen'>
             <div className="card w-96 bg-primary ">

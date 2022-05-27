@@ -13,6 +13,7 @@ const RequireAdmin = ({children}) => {
     if(loading || adminLoading){
         return <p>Loading...</p>;
       }
+      
 
     if(!user || !admin){
         signOut(auth);

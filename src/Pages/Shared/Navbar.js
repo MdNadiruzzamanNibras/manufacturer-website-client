@@ -3,10 +3,12 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import auth from '../../firebase.init';
+import useAdmin from '../../Hooks/useAdmin';
 
 
 const Navbar = () => {
     const [user] = useAuthState(auth);
+    const [admin] =useAdmin(user)
     const logout = () => {
         signOut(auth);
         localStorage.removeItem('accessToken')
@@ -14,7 +16,7 @@ const Navbar = () => {
    
     const NavbarLink = <>
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/manageproducts">ManageProduct</Link></li>
+       {admin && <li><Link to="/manageproducts">ManageProduct</Link></li>}
         
          {
             user && <li><Link to="/dashboard">DashBoard</Link></li>
@@ -33,7 +35,7 @@ const Navbar = () => {
                         {NavbarLink}
                     </ul>
                 </div>
-                <a  className="btn btn-ghost normal-case text-xl">Redline Motorsports</a>
+                <h2  className="btn btn-ghost normal-case text-xl">Redline Motorsports</h2>
             </div>
             <div  className="navbar-center hidden lg:flex">
                 <ul  className="menu menu-horizontal p-0">

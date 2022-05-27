@@ -28,7 +28,10 @@ const Login = () => {
     if(loading){
       return <p>Loading...</p>
     }
-
+    let errorMassage
+        if(error){
+             errorMassage = <div className='text-danger'>Error: {error?.message}</div>
+        }
     return (
        <div   className='flex justify-center items-center min-h-screen'>
             <div  className="card w-96 bg-primary ">
@@ -86,6 +89,7 @@ const Login = () => {
           
           <input  className='btn max-w-xs text-white' type="submit" value="Login" />
     </form>
+    {errorMassage}
     <div className="divider text-white">OR</div>
     <SocialLogin></SocialLogin>
     <p><small>New to The AutoMobile <Link  className='text-white' to='/signup'>Create Account</Link></small></p>

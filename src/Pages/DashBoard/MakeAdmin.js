@@ -17,7 +17,7 @@ const MakeAdmin = () => {
             <div >
                 <table className="table ">
                     <thead>
-                        <tr>
+                        <tr> <th></th>
                             <th>Index</th>
                             <th>Email</th>
                             <th>Make Admin</th>

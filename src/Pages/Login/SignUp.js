@@ -25,10 +25,16 @@ const SignUp = () => {
   };
     const [token] = useToken(user)
 
-    console.log(user);
+    if(loading){
+      return <p>Loading...</p>
+    }
     if(token){
       navigate(from, { replace: true });
     }
+    let errorMassage
+        if(error){
+             errorMassage = <div className='text-danger'>Error: {error?.message}</div>
+        }
     return (
         <div   className='flex justify-center items-center min-h-screen'>
         <div  className="card w-96 bg-primary ">
@@ -107,6 +113,7 @@ const SignUp = () => {
       
       <input  className='btn max-w-xs text-white' type="submit" value="Signup" />
 </form>
+{errorMassage}
 <div className="divider text-white">OR</div>
 
  <SocialLogin></SocialLogin>

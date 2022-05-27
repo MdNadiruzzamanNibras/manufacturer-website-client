@@ -8,7 +8,7 @@ const Footer = () => {
            <footer className="footer p-10 bg-neutral text-neutral-content">
   <div>
     
-    <p className='text-2xl font-extrabold'>Redline Motorsports Ltd.</p><p className='font-bold'>Providing reliable tech since 1992</p>
+    <p className='text-2xl font-extrabold'>Redline Motorsports Ltd.</p><p className='font-bold'>Redline Motorsports Ltd. Since 1992</p>
     <p className='font-bold'>Redline Motorsports Ltd. copyright © {year}</p>
   </div> 
   <div>

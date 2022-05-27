@@ -31,7 +31,7 @@ const PurchaseTool = () => {
     <p  className='text-lg'>Price: ${price}</p>
     <p  className='text-xs'>{shortDescription}</p>
     
-      <button onClick={handleNav} className="btn btn-primary">Get Started</button>
+      <button onClick={handleNav} className="btn btn-primary">Order</button>
      
     </div>
   </div>

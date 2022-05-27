@@ -69,7 +69,7 @@ const  PurchaseForm = ({tool,setTool}) => {
    <input type="text" value={user?.email}   className="input input-bordered w-full max-w-xs" /><br />
    <input type="number" name="phone" placeholder="Phone Number"  className="input input-bordered w-full max-w-xs" /><br />
   <input type="number" value={value} onChange={handleChange} name="quantity" placeholder="Amount of tool"  className="input input-bordered  max-w-xs" /> <br />
-      <input type="submit"   className='btn w-full max-w-xs text-white' value="Buy Now" />      
+      <input type="submit"   className='btn w-full max-w-xs text-white' value="Order Now" />      
       
    </form>
     </div>

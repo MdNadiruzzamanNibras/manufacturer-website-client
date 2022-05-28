@@ -12,7 +12,7 @@ const AddReview = () => {
                 rating : event.target.rating.value ,
         }
 
-        fetch('http://localhost:5000/review',{
+        fetch('https://pure-depths-02632.herokuapp.com/review',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
@@ -22,10 +22,14 @@ const AddReview = () => {
         .then(res=>res.json())
         .then(data=>{
             if(data.insertedId){
-                toast.success('Thanks for your Review')
+                toast.success('Great add a review')
+              
+            }
+            else{
+                toast.error('Oh no try again later')
             }
         })
-        event.reset()
+        event?.reset()
     }
     return (
         <div>

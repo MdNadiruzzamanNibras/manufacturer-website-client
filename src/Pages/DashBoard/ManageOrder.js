@@ -5,7 +5,7 @@ import Allorder from './Allorder';
 
 const ManageOrder = () => {
   const [order, setorder] =useState([])
-    const {data:orders, isLoading}= useQuery('orders',()=>fetch('http://localhost:5000/order',{
+    const {data:orders, isLoading}= useQuery('orders',()=>fetch('https://pure-depths-02632.herokuapp.com/order',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -18,7 +18,7 @@ const ManageOrder = () => {
     const cancelOrder =id=>{
       const processed = window.confirm('Are you sure cancel the order')
       if(processed){
-          const url= `http://localhost:5000/allorder/${id}`
+          const url= `https://pure-depths-02632.herokuapp.com/allorder/${id}`
           fetch(url,{
               method:'DELETE',
               headers: {

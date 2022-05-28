@@ -29,7 +29,7 @@ const AddProducts = () => {
                      image: image
                  }
              
-                fetch('http://localhost:5000/tools',{
+                fetch('https://pure-depths-02632.herokuapp.com/tools',{
                     method:'POST',
                     headers: {
                      'content-type': 'application/json',

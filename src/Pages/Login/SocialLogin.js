@@ -1,44 +1,40 @@
 import { GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import React, { useState } from 'react';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
 import useToken from '../../Hooks/useToken';
 
 
 const SocialLogin = () => {
-    const [user, setUser] =useState({})
+  const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+    
     const navigate = useNavigate()
     const location = useLocation()
     let from = location.state?.from?.pathname || "/";
 
-  const googleProvider = new GoogleAuthProvider();
   
-  const handleGoogleSignIn =()=>{
-   signInWithPopup(auth, googleProvider)
-   .then((result)=>{
-    const user = result.user;
-    setUser(user)
-    
-   })
-   .catch((error) => {
-     console.log('error', error)
-   })
-  }
-  console.log(user);
   const [token]= useToken(user)
   if(token){
     navigate(from, { replace: true });
   }
+  if(loading){
+    return <p>Loading...</p>
+  }
+  let errorMessage;
+    if(error ){
+      errorMessage= <p className='text-red-600'>{error?.message}</p>
+    }
   return (
    <div>
-     <button
-        onClick={handleGoogleSignIn}
+     
+      
+            <button
+         onClick={() => signInWithGoogle()}
          className='btn w-full max-w-xs text-white'>
             Google sign in</button>
-      
      
-     
-      
+            {errorMessage}
      
     </div>
   );

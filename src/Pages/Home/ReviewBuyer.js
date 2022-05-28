@@ -4,7 +4,7 @@ import ReviewDetail from './ReviewDetail';
 const ReviewBuyer = () => {
     const [reviews, setReviews] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/customerReview')
+        fetch('https://pure-depths-02632.herokuapp.com/customerReview')
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[])

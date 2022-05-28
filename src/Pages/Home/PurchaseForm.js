@@ -28,7 +28,7 @@ const  PurchaseForm = ({tool,setTool}) => {
          const name = tool?.name
          
          const phone = event?.target?.phone?.value
-        const quantity = event?.target?.quantity?.value
+        let quantity = event?.target?.quantity?.value
         console.log(quantity,phone, price, name);
         const order={
             
@@ -38,7 +38,7 @@ const  PurchaseForm = ({tool,setTool}) => {
            BuyerPhone: event?.target?.phone?.value,
            price: quantity*price
         }
-        fetch('http://localhost:5000/order',{
+        fetch('https://pure-depths-02632.herokuapp.com/order',{
             method:'POST',
             headers: {
                 'content-type': 'application/json',

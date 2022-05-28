@@ -12,7 +12,7 @@ const PurchaseTool = () => {
    const navigate = useNavigate()
    
    useEffect(()=>{
-    const url =`http://localhost:5000/tools/${id}`
+    const url =`https://pure-depths-02632.herokuapp.com/tools/${id}`
     fetch(url)
     .then(res=>res.json())
     .then(data=> setTool(data))}

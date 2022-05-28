@@ -7,7 +7,7 @@ const ManagesProducts = () => {
     const deletetool =id=>{
         const processed = window.confirm('Are you sure delete the tool')
         if(processed){
-            const url= `http://localhost:5000/tools/${id}`
+            const url= `https://pure-depths-02632.herokuapp.com/tools/${id}`
             fetch(url,{
                 method:'DELETE',
                

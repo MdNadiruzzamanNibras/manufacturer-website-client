@@ -11,7 +11,7 @@ const OrderPayment = () => {
     const [orderId, setOrderId] =useState({})
   console.log(orderId);
     useEffect(()=>{
-        const url =`http://localhost:5000/order/${id}`
+        const url =`https://pure-depths-02632.herokuapp.com/order/${id}`
         fetch(url, {
             method:'GET',
             headers: {

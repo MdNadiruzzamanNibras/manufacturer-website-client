@@ -15,7 +15,7 @@ const CheckoutForm = ({orderId}) => {
     console.log(clientSecret);
     useEffect(()=>{
         if(orderId){
-            fetch('http://localhost:5000/create-payment-intent',{
+            fetch('https://pure-depths-02632.herokuapp.com/create-payment-intent',{
             method:'POST',
             headers:{
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({orderId}) => {
         orderId: _id,
         transactionId: paymentIntent.id
     }
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://pure-depths-02632.herokuapp.com/order/${_id}`, {
         method: 'PATCH',
         headers: {
             'content-type': 'application/json',

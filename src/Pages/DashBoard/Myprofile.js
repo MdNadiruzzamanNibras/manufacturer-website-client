@@ -8,7 +8,7 @@ const Myprofile = () => {
     const [profile, setprofile]=useState([])
     useEffect(()=>{
         if(user)
-       {fetch(`http://localhost:5000/myProfile?email=${user?.email}`,{
+       {fetch(`https://pure-depths-02632.herokuapp.com/myProfile?email=${user?.email}`,{
          method:'GET',
          headers:{
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`

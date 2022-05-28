@@ -1,32 +1,26 @@
-import { signOut } from 'firebase/auth';
+
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyOrder = () => {
+
+  const [user,loading] = useAuthState(auth);
+  
     const [orders, setorders]= useState([])
-    const navigate =useNavigate()
-    const [user] = useAuthState(auth);
-   console.log(user);
+    
+  
     useEffect(()=>{
        if(user)
-       {fetch(`http://localhost:5000/myorder?email=${user?.email}`,{
+       {fetch(`https://pure-depths-02632.herokuapp.com/myorder?email=${user?.email}`,{
          method:'GET',
          headers:{
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
          }
        })
-       .then(res => {
-        if (res.status === 401 || res.status === 403) {
-            signOut(auth);
-            localStorage.removeItem('accessToken');
-            toast.error(res.status.message)
-            navigate('/');
-        }
-        return res.json()
-    })
+       .then(res =>  res.json())
     .then(data => {
       setorders(data);
     });
@@ -36,7 +30,7 @@ const MyOrder = () => {
   const cancelOrder =id=>{
     const processed = window.confirm('Are you sure cancel the order')
     if(processed){
-        const url= `http://localhost:5000/order/${id}`
+        const url= `https://pure-depths-02632.herokuapp.com/order/${id}`
         fetch(url,{
             method:'DELETE',
             headers: {
@@ -53,6 +47,9 @@ const MyOrder = () => {
     }
 
  }
+ if(loading){
+  return <p>Loading...</p>
+}
     return (
         <div>
             <h3>My order:{orders?.length}</h3>

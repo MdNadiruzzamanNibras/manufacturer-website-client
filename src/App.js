@@ -22,6 +22,7 @@ import PurchaseForm from './Pages/Home/PurchaseForm';
 import OrderPayment from './Pages/DashBoard/OrderPayment';
 import NotFound from './Pages/NotFound/NotFound';
 import Update from './Pages/DashBoard/Update';
+import Protfolion from './Pages/Profolio/Protfolion';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
        <Route path='/purchaseForm' element={<RequireAuth><PurchaseForm></PurchaseForm></RequireAuth>}></Route>
        <Route path='/signUp' element={<SignUp/>}></Route>
        <Route path='/update' element={<Update></Update>}></Route>
+       <Route path='/profolio' element={<RequireAuth><Protfolion></Protfolion></RequireAuth>}></Route>
        <Route path='/manageproducts' element={<RequireAdmin><ManagesProducts></ManagesProducts></RequireAdmin>}></Route>
        <Route path='/dashboard' element={
          <RequireAuth><DashBoard/></RequireAuth>}>

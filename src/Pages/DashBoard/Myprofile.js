@@ -16,21 +16,26 @@ const Myprofile = () => {
        })
     .then(res=>res.json())
     .then(data => {
-      console.log(data);
+      setprofile(data)
     });
   }
-    },[])
+    },[user])
    
     const navigate =useNavigate()
     const updateNavigate=()=>{
         navigate('/update')
     }
     return (
-        <div className="card w-96 bg-base-100 my-6 shadow-xl">
+        <div className="card mx-auto w-96 bg-base-100 my-6 shadow-xl">
+             <h1 className='text-4xl text-purple-700 my-4 text-center'>Profile</h1>
              <div className="card-body items-center text-center">
-            <h1  className='text-2xl'>{user.displayName}</h1>
-            <h3>{user.email}</h3>
-            <button onClick={updateNavigate}>Update</button>
+            <h1  className='text-3xl'>Name:{user.displayName}</h1>
+            <h3 >Email:{user.email}</h3>
+            <h4>Address:{profile.address}</h4>
+            <h5> Phone:{profile.phone}</h5>
+            <h5>Profession:{profile.linkedin}</h5>
+
+            <button className='btn w-full max-w-xs text-white' onClick={updateNavigate}>Update</button>
         </div>
         </div>
     );

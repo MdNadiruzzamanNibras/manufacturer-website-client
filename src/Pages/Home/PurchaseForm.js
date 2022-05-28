@@ -60,7 +60,7 @@ const  PurchaseForm = ({tool,setTool}) => {
      }
     
     return (
-        <div className="card w-96 mx-auto bg-base-100 shadow-xl">
+        <div className="card  w-96 mx-auto bg-base-100 shadow-xl">
             <h2  className='text-2xl text-center mt-2 font-bold text-purple-700'>Purchase Form</h2>
   <div className="card-body">
    <form onSubmit={handleOrder}>

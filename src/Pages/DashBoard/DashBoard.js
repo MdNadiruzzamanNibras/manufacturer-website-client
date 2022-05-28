@@ -20,7 +20,7 @@ const DashBoard = () => {
                 <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
                     {/* <!-- Sidebar content here --> */}
                      <li><Link to="/dashboard">My Profile</Link></li>
-                    {user && <>
+                    {user && !admin &&<>
                         <li><Link to="/dashboard/order">My order</Link></li>
                       <li><Link to="/dashboard/addReview">Add a review</Link></li>
                     </>

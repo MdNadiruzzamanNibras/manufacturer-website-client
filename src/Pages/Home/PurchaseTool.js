@@ -10,9 +10,7 @@ const PurchaseTool = () => {
     const [tool, setTool] = useState({})
     const {name, image, shortDescription, orderQuantity, availableQuantity, price} = tool
    const navigate = useNavigate()
-   const handleNav=()=>{
-    navigate('/purchaseForm')
-   }
+   
    useEffect(()=>{
     const url =`http://localhost:5000/tools/${id}`
     fetch(url)
@@ -20,7 +18,7 @@ const PurchaseTool = () => {
     .then(data=> setTool(data))}
     ,[id])
     return (
-        <div>
+        <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2'>
           <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row">
     <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
@@ -31,7 +29,7 @@ const PurchaseTool = () => {
     <p  className='text-lg'>Price: ${price}</p>
     <p  className='text-xs'>{shortDescription}</p>
     
-      <button onClick={handleNav} className="btn btn-primary">Order</button>
+     
      
     </div>
   </div>

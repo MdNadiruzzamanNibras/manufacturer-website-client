@@ -15,9 +15,11 @@ const MakeAdmin = () => {
     }
     return (
             <div >
-                <table className="table ">
+                 <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
-                        <tr> <th></th>
+                        <tr> 
+                           
                             <th>Index</th>
                             <th>Email</th>
                             <th>Make Admin</th>
@@ -26,14 +28,16 @@ const MakeAdmin = () => {
                     </thead>
                     <tbody >
                        {
-                           users.map(user=><User
+                           users.map((user,index)=><User
                            key={user._id}
                            user={user}
+                           index={index}
                            refetch={refetch}
                            ></User>)
                        }
                     </tbody>
                 </table>
+                </div>
             </div>
        
     );

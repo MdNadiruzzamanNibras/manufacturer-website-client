@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useQuery } from 'react-query';
+import { toast } from 'react-toastify';
 import Allorder from './Allorder';
 
 const ManageOrder = () => {
+  const [order, setorder] =useState([])
     const {data:orders, isLoading}= useQuery('orders',()=>fetch('http://localhost:5000/order',{
         method: 'GET',
         headers:{
@@ -12,7 +14,30 @@ const ManageOrder = () => {
     if(isLoading){
         return <p>Loading...</p>
     }
-   
+    
+    const cancelOrder =id=>{
+      const processed = window.confirm('Are you sure cancel the order')
+      if(processed){
+          const url= `http://localhost:5000/allorder/${id}`
+          fetch(url,{
+              method:'DELETE',
+              headers: {
+                authorization: `Bearer ${localStorage.getItem('accessToken')}`
+            },
+             
+          })
+          .then(res=> res.json())
+          .then(data=>{
+            toast(data);
+           const remaining = orders.filter(order => order._id !== id);
+           setorder(remaining);
+          })
+      }
+  
+   }  
+   const handleShift = ()=>{
+     toast('shift the product')
+   }
     return (
         <div>
             <h3>My order:{orders?.length}</h3>
@@ -27,6 +52,7 @@ const ManageOrder = () => {
         <th>Product</th>
         <th>Price</th>
         <th>Payment</th>
+        <th>Cancel </th>
        
         
       </tr>
@@ -43,12 +69,19 @@ const ManageOrder = () => {
             
             <td>
             {(order.price && !order.paid) &&  <button  className='btn btn-xs btn-sm'>Unpaid</button>}
-            {(order.price && order.paid) && 
-                <button  className='btn btn-xs btn-sm btn-success'>Pending</button>
-                                        
-                                    }
+             { 
+             
+            //(!handleShift) ?
+             (order.price && order.paid) && 
+                  <button onClick={handleShift} className='btn btn-xs btn-sm btn-success'>Pending</button>  
+                  // :
+                  
+                    //  <button  className='btn btn-xs btn-sm btn-success'>Shift</button>
+                   }
             </td>
-            
+            <td><button onClick={()=>cancelOrder(order._id)}  className='btn  btn-sm mt-4' >
+                  Cancel
+                </button></td>
           </tr>)
       }
       

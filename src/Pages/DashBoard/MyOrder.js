@@ -22,6 +22,7 @@ const MyOrder = () => {
         if (res.status === 401 || res.status === 403) {
             signOut(auth);
             localStorage.removeItem('accessToken');
+            toast.error(res.status.message)
             navigate('/');
         }
         return res.json()

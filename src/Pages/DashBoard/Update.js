@@ -30,7 +30,7 @@ const Update = () => {
         })
         .then(res=>res.json())
         .then(data=>{
-        if(data.upsertedId){
+        if(data){
             toast('Update your profile')
         }})
          navigate('/dashboard')
@@ -44,7 +44,7 @@ const Update = () => {
             <input type="text"  value={user?.email}  className="input input-bordered  max-w-xs" /> <br />
             <input type="number"  name="phone" placeholder="Your phone Number"  className="input input-bordered  max-w-xs" /> <br />
             <input type="text"  name="address" placeholder="Address"  className="input input-bordered  max-w-xs" /> <br />
-            <input type="text"  name="linkedin" placeholder="LInkedin Link"  className="input input-bordered  max-w-xs" /> <br />
+            <input type="text"  name="linkedin" placeholder="Profession"  className="input input-bordered  max-w-xs" /> <br />
             
             <input className='btn w-full max-w-xs text-white' type="submit" value="Update" />
             </form>

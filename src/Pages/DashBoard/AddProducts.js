@@ -148,7 +148,7 @@ const AddProducts = () => {
                         type="number"
                         placeholder="Price"
                          className="input input-bordered w-full max-w-xs"
-                        {...register("Price", {
+                        {...register("price", {
                             required: {
                                 value: true,
                                 message: 'Price is Required'

@@ -23,7 +23,12 @@ const Blog = () => {
             <p>
             Prototype-based programming is a  object-oriented programming which work reaptly object base. It can be  known also prototypal,prototype-oriented, classless, or instance-based programming. It's object base it should clone and extend. This  prototypical has no direct language. Objects directly other object prototype property.
             </p>
-            <h1 className='text-3xl'></h1>
+            <h1 className='text-3xl'>Why you do not set the state directly in React. </h1>
+            <p>Reasons that cann't be do not set the state directly in react is:
+                1. If you set direct in react after you call the setState information has been change.
+                2.When call directly state in react it can't immediately this.state and after it's give you present value.
+                3.You wil lost constrol of all componet.
+            </p>
             <h1 className='text-3xl'></h1>
         </div>
     );

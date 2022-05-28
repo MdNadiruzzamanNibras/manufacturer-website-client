@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init'
+import {  useParams } from 'react-router-dom';
 import PurchaseForm from './PurchaseForm';
 
 const PurchaseTool = () => {
@@ -9,7 +7,6 @@ const PurchaseTool = () => {
     const {id} =useParams()
     const [tool, setTool] = useState({})
     const {name, image, shortDescription, orderQuantity, availableQuantity, price} = tool
-   const navigate = useNavigate()
    
    useEffect(()=>{
     const url =`https://pure-depths-02632.herokuapp.com/tools/${id}`

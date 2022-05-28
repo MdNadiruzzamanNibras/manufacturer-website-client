@@ -29,7 +29,15 @@ const Blog = () => {
                 2.When call directly state in react it can't immediately this.state and after it's give you present value.
                 3.You wil lost constrol of all componet.
             </p>
-            <h1 className='text-3xl'></h1>
+           
+            <p>
+                const =[{}]
+            </p>
+            <h1  className='text-3xl'>What is a unit test? Why should write unit tests?</h1>
+            <p> Unit test is a software system which unit behavior. JavaScript Unit Testing is a method which JavaScript test code is written web page or web application .
+            Unit testing allows software developers to think through the design of the software. It has to write before they write code. It can help to developer stay focused and them to create best design.
+             
+            </p>
         </div>
     );
 };

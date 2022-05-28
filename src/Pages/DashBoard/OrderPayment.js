@@ -9,7 +9,6 @@ const stripePromise = loadStripe('pk_test_51L1Vt6LtQu2zZJ4yjr19yW0NE3J2asAnRsuZI
 const OrderPayment = () => {
     const {id}= useParams()
     const [orderId, setOrderId] =useState({})
-  console.log(orderId);
     useEffect(()=>{
         const url =`https://pure-depths-02632.herokuapp.com/order/${id}`
         fetch(url, {

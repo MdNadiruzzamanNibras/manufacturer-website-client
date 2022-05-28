@@ -2,7 +2,7 @@ import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
 const CheckoutForm = ({orderId}) => {
-    console.log(orderId);
+   
     const {_id, BuyerEmail, BuyerName, price} =orderId
   
     const stripe = useStripe()
@@ -12,7 +12,7 @@ const CheckoutForm = ({orderId}) => {
     const [transactionId, setTransactionId] = useState('')
     const [processing, setProcessing] = useState(false);
     const [clientSecret, setClientSecret] = useState('')
-    console.log(clientSecret);
+  
     useEffect(()=>{
         if(orderId){
             fetch('https://pure-depths-02632.herokuapp.com/create-payment-intent',{
@@ -81,7 +81,7 @@ const CheckoutForm = ({orderId}) => {
         transactionId: paymentIntent.id
     }
     fetch(`https://pure-depths-02632.herokuapp.com/order/${_id}`, {
-        method: 'PATCH',
+        method: 'PUT',
         headers: {
             'content-type': 'application/json',
             'authorization': `Bearer ${localStorage.getItem('accessToken')}`

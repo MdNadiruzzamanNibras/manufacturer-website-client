@@ -8,8 +8,8 @@ const useToken = user=>{
     
     if(email)
    
-       {  console.log(email);
-           fetch(`https://pure-depths-02632.herokuapp.com/user/${email}`,{
+       { 
+        fetch(`https://pure-depths-02632.herokuapp.com/user/${email}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'
@@ -20,7 +20,6 @@ const useToken = user=>{
         .then(data=>{
             
             const accessToken = data?.token
-            console.log(accessToken);
             localStorage.setItem('accessToken', accessToken)
             setToken(accessToken)
         })}

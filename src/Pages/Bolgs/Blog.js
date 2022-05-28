@@ -18,6 +18,12 @@ const Blog = () => {
                 3.Server state - Server data comes to the integrated the UI state.
                 4.URL state - URL data comes to the  URL and query pathname.
             </p>
+           
+            <h1 className='text-3xl'>How does prototypical inheritance work?</h1>
+            <p>
+            Prototype-based programming is a  object-oriented programming which work reaptly object base. It can be  known also prototypal,prototype-oriented, classless, or instance-based programming. It's object base it should clone and extend. This  prototypical has no direct language. Objects directly other object prototype property.
+            </p>
+            <h1 className='text-3xl'></h1>
             <h1 className='text-3xl'></h1>
         </div>
     );

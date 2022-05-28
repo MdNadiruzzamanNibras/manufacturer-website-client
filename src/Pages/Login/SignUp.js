@@ -33,7 +33,7 @@ const SignUp = () => {
     }
     let errorMassage
         if(error){
-             errorMassage = <div className='text-danger'>Error: {error?.message}</div>
+             errorMassage = <div className='text-red-500'>Error: {error?.message}</div>
         }
     return (
         <div   className='flex justify-center items-center min-h-screen'>
@@ -111,7 +111,7 @@ const SignUp = () => {
       </div>
     
       
-      <input  className='btn max-w-xs text-white' type="submit" value="Signup" />
+      <input  className='btn w-full max-w-xs text-white' type="submit" value="Signup" />
 </form>
 {errorMassage}
 <div className="divider text-white">OR</div>

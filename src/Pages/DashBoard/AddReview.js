@@ -12,7 +12,7 @@ const AddReview = () => {
                 rating : event.target.rating.value ,
         }
 
-        fetch('https://pure-depths-02632.herokuapp.com/review',{
+        fetch('https://manufacturer-website-t9g0.onrender.com/review',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'

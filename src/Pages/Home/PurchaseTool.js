@@ -9,7 +9,7 @@ const PurchaseTool = () => {
     const {name, image, shortDescription, orderQuantity, availableQuantity, price} = tool
    
    useEffect(()=>{
-    const url =`https://pure-depths-02632.herokuapp.com/tools/${id}`
+    const url =`https://manufacturer-website-t9g0.onrender.com/tools/${id}`
     fetch(url)
     .then(res=>res.json())
     .then(data=> setTool(data))}

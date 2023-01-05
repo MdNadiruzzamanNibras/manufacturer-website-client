@@ -9,7 +9,7 @@ const useToken = user=>{
     if(email)
    
        { 
-        fetch(`https://pure-depths-02632.herokuapp.com/user/${email}`,{
+        fetch(`https://manufacturer-website-t9g0.onrender.com/user/${email}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'

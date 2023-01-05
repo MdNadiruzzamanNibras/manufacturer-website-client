@@ -4,13 +4,13 @@ import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const  PurchaseForm = ({tool,setTool}) => {
-    const [user, loading, error] = useAuthState(auth);
-  //   const min = tool?.orderQuantity
-  // const max = tool?.availableQuantity
+    const [user] = useAuthState(auth);
+    const min = tool?.orderQuantity
+  const max = tool?.availableQuantity
   // const [value, setValue] = useState(1);
   // const [count, setCount] = useState(0);
-  // const [Serror, setError] = useState(null);
- 
+  const [error, setError] = useState('');
+
   // function handlePlus() {
   //   if (count < Qty) {
   //     setCount(count + 1);
@@ -22,6 +22,7 @@ const  PurchaseForm = ({tool,setTool}) => {
   // const handleChange = event => {
   //   const value = Math.max(min, Math.min(max, Number(event.target.value)));
   //   setValue(value);}
+ 
      const handleOrder=event=>{
         event.preventDefault();
         const price = tool?.price
@@ -38,7 +39,7 @@ const  PurchaseForm = ({tool,setTool}) => {
            BuyerPhone: event?.target?.phone?.value,
            price: quantity*price
         }
-        fetch('https://pure-depths-02632.herokuapp.com/order',{
+        fetch('https://manufacturer-website-t9g0.onrender.com/order',{
             method:'POST',
             headers: {
                 'content-type': 'application/json',
@@ -60,7 +61,7 @@ const  PurchaseForm = ({tool,setTool}) => {
      }
     
     return (
-        <div className="card  w-96 mx-auto bg-base-100 shadow-xl">
+        <div className="card  w-96 mx-auto ">
             <h2  className='text-2xl text-center mt-2 font-bold text-purple-700'>Purchase Form</h2>
   <div className="card-body">
    <form onSubmit={handleOrder}>

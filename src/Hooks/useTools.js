@@ -3,7 +3,7 @@ import { useEffect, useState } from "react"
 const useTools =()=>{
     const [tools, setTools] = useState([])
     useEffect(()=>{
-        fetch('https://pure-depths-02632.herokuapp.com/tools')
+        fetch('https://manufacturer-website-t9g0.onrender.com/tools')
         .then(res=>res.json())
         .then(data=> setTools(data))
     },[])

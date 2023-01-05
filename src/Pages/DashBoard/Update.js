@@ -19,7 +19,7 @@ const Update = () => {
 
         const updateUser={name,email, phone, address, linkedin}
         console.log(name,email, phone, address);
-        fetch(`https://pure-depths-02632.herokuapp.com/profile/${user?.email}`,
+        fetch(`https://manufacturer-website-t9g0.onrender.com/profile/${user?.email}`,
         {
             method:'PUT',
             headers:{

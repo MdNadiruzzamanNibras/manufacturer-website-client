@@ -29,7 +29,7 @@ const AddProducts = () => {
                      image: image
                  }
              
-                fetch('https://pure-depths-02632.herokuapp.com/tools',{
+                fetch('https://manufacturer-website-t9g0.onrender.com/tools',{
                     method:'POST',
                     headers: {
                      'content-type': 'application/json',

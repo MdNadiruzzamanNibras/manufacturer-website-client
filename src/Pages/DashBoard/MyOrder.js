@@ -14,7 +14,7 @@ const MyOrder = () => {
   
     useEffect(()=>{
        if(user)
-       {fetch(`https://pure-depths-02632.herokuapp.com/myorder?email=${user?.email}`,{
+       {fetch(`https://manufacturer-website-t9g0.onrender.com/myorder?email=${user?.email}`,{
          method:'GET',
          headers:{
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -30,7 +30,7 @@ const MyOrder = () => {
   const cancelOrder =id=>{
     const processed = window.confirm('Are you sure cancel the order')
     if(processed){
-        const url= `https://pure-depths-02632.herokuapp.com/order/${id}`
+        const url= `https://manufacturer-website-t9g0.onrender.com/order/${id}`
         fetch(url,{
             method:'DELETE',
             headers: {

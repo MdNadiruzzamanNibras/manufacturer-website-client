@@ -12,12 +12,15 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
+            <div className='max-w-7xl mx-auto'>
             <Tools></Tools>
             <BusinessSummary></BusinessSummary>
             <ReviewBuyer></ReviewBuyer>
             <Overtaking></Overtaking>
             <NewProduct></NewProduct>
             <Coundount></Coundount>
+            </div>
+            
 
         </div>
     );

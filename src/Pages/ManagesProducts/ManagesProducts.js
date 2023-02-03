@@ -22,8 +22,8 @@ const ManagesProducts = () => {
  
      }
     return (
-        <div>
-            <div >
+        
+            <div className='max-w-7xl mx-auto'>
                 <div  className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
                 {
                 tools && tools.map(tool=>  <div className="card w-96 bg-base-100 my-6 shadow-xl">
@@ -46,7 +46,7 @@ const ManagesProducts = () => {
             }
                 </div>
             </div>
-        </div>
+      
             
     );
 };

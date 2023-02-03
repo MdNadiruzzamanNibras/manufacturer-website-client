@@ -19,11 +19,10 @@ const MakeAdmin = () => {
                 <table className="table w-full">
                     <thead>
                         <tr> 
-                           
                             <th>Index</th>
                             <th>Email</th>
                             <th>Make Admin</th>
-                           
+
                         </tr>
                     </thead>
                     <tbody >

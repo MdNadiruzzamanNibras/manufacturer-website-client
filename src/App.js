@@ -27,16 +27,16 @@ import Blog from './Pages/Bolgs/Blog';
 
 function App() {
   return (
-    <div   className='max-w-7xl mx-auto'>
+    <div   >
       <Navbar></Navbar>
-     <Routes>
+     <Routes >
        <Route path='/' element={<Home></Home>}></Route>
        <Route path='/tools/:id' element={<RequireAuth><PurchaseTool></PurchaseTool></RequireAuth>}></Route>
        <Route path='/login' element={<Login></Login>}></Route>
        <Route path='/purchaseForm' element={<RequireAuth><PurchaseForm></PurchaseForm></RequireAuth>}></Route>
        <Route path='/signUp' element={<SignUp/>}></Route>
        <Route path='/update' element={<Update></Update>}></Route>
-       <Route path='/blog' element={<Blog></Blog>}></Route>
+       <Route path='/blog' element={<Blog></Blog>} ></Route>
        <Route path='/profolio' element={<RequireAuth><Protfolion></Protfolion></RequireAuth>}></Route>
        <Route path='/manageproducts' element={<RequireAdmin><ManagesProducts></ManagesProducts></RequireAdmin>}></Route>
        <Route path='/dashboard' element={

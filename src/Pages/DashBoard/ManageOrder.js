@@ -79,7 +79,7 @@ const ManageOrder = () => {
                     //  <button  className='btn btn-xs btn-sm btn-success'>Shift</button>
                    }
             </td>
-            <td><button onClick={()=>cancelOrder(order._id)}  className='btn  btn-sm mt-4' >
+            <td><button onClick={()=>cancelOrder(order._id)}  className='btn  btn-sm ' >
                   Cancel
                 </button></td>
           </tr>)

@@ -9,7 +9,7 @@ const DashBoard = () => {
     const [admin] =useAdmin(user)
    
     return (
-        <div className="drawer drawer-mobile">
+        <div className="drawer drawer-mobile max-w-7xl mx-auto">
             <input id="dashboard-sidebar" type="checkbox" className="drawer-toggle" />
             <div className="drawer-content">
                 <h2  className='text-2xl font-bold text-purple-500'>Welcome to your Dashboard</h2>

@@ -27,10 +27,8 @@ const  PurchaseForm = ({tool,setTool}) => {
         event.preventDefault();
         const price = tool?.price
          const name = tool?.name
-         
-         const phone = event?.target?.phone?.value
         let quantity = event?.target?.quantity?.value
-        console.log(quantity,phone, price, name);
+        
         const order={
             
            toolName :name,
@@ -39,10 +37,11 @@ const  PurchaseForm = ({tool,setTool}) => {
            BuyerPhone: event?.target?.phone?.value,
            price: quantity*price
         }
+        console.log(order, 'order');
         fetch('https://manufacturer-website-t9g0.onrender.com/order',{
             method:'POST',
             headers: {
-                'content-type': 'application/json',
+                'Content-Type': 'application/json',
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`
             },
             body:JSON.stringify(order)

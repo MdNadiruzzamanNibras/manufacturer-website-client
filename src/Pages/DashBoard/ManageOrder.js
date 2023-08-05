@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useQuery } from 'react-query';
 import { toast } from 'react-toastify';
-import Allorder from './Allorder';
+import Loading from '../Shared/Loading';
 
 const ManageOrder = () => {
   const [order, setorder] =useState([])
@@ -12,7 +12,7 @@ const ManageOrder = () => {
         }
     }).then(res=>res.json()))
     if(isLoading){
-        return <p>Loading...</p>
+        return <Loading/>
     }
     
     const cancelOrder =id=>{

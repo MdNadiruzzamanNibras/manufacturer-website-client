@@ -1,6 +1,7 @@
 import React from 'react';
 import { useQuery } from 'react-query';
 import User from './User';
+import Loading from '../Shared/Loading';
 
 
 const MakeAdmin = () => {
@@ -11,7 +12,7 @@ const MakeAdmin = () => {
         }
     }).then(res=>res.json()))
     if(isLoading){
-        return <p>Loading</p>
+        return <Loading/>
     }
     return (
             <div >

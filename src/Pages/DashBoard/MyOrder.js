@@ -4,6 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyOrder = () => {
 
@@ -48,7 +49,7 @@ const MyOrder = () => {
 
  }
  if(loading){
-  return <p>Loading...</p>
+  return <Loading></Loading>
 }
     return (
         <div>

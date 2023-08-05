@@ -8,7 +8,7 @@ const Myprofile = () => {
     const [profile, setprofile]=useState([])
     useEffect(()=>{
         if(user)
-       {fetch(`https://manufacturer-website-t9g0.onrender.com/myProfile?email=${user?.email}`,{
+       {fetch(`https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/myProfile?email=${user?.email}`,{
          method:'GET',
          headers:{
            'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -24,6 +24,7 @@ import NotFound from './Pages/NotFound/NotFound';
 import Update from './Pages/DashBoard/Update';
 import Protfolion from './Pages/Profolio/Protfolion';
 import Blog from './Pages/Bolgs/Blog';
+import Loading from './Pages/Shared/Loading';
 
 function App() {
   return (
@@ -48,7 +49,8 @@ function App() {
             <Route path='makeAdmin' element={<RequireAdmin><MakeAdmin/></RequireAdmin>}></Route>
             <Route path='allOrders' element={<RequireAdmin><ManageOrder/></RequireAdmin>}></Route>
             <Route path='addProducts' element={<RequireAdmin><AddProducts/></RequireAdmin>}></Route>
-            </Route>
+        </Route>
+        
             <Route path='*' element={<NotFound/>}></Route>
      </Routes>
      <ToastContainer/>

@@ -15,7 +15,7 @@ const CheckoutForm = ({orderId}) => {
   
     useEffect(()=>{
         if(orderId){
-            fetch('https://manufacturer-website-t9g0.onrender.com/create-payment-intent',{
+            fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/create-payment-intent',{
             method:'POST',
             headers:{
                 'content-type': 'application/json',
@@ -80,7 +80,7 @@ const CheckoutForm = ({orderId}) => {
         orderId: _id,
         transactionId: paymentIntent.id
     }
-    fetch(`https://manufacturer-website-t9g0.onrender.com/order/${_id}`, {
+    fetch(`https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/order/${_id}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',

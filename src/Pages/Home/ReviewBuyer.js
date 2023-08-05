@@ -4,7 +4,7 @@ import ReviewDetail from './ReviewDetail';
 const ReviewBuyer = () => {
     const [reviews, setReviews] = useState([])
     useEffect(()=>{
-        fetch('https://manufacturer-website-t9g0.onrender.com/customerReview')
+        fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/customerReview')
         .then(res=>res.json())
         .then(data=>setReviews(data))
     },[])

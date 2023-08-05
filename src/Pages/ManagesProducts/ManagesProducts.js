@@ -7,7 +7,7 @@ const ManagesProducts = () => {
     const deletetool =id=>{
         const processed = window.confirm('Are you sure delete the tool')
         if(processed){
-            const url= `https://manufacturer-website-t9g0.onrender.com/tools/${id}`
+            const url= `https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/tools/${id}`
             fetch(url,{
                 method:'DELETE',
                

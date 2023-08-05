@@ -9,7 +9,7 @@ const useToken = user=>{
     if(email)
    
        { 
-        fetch(`https://manufacturer-website-t9g0.onrender.com/user/${email}`,{
+        fetch(`https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/user/${email}`,{
             method:'PUT',
             headers:{
                 'content-type': 'application/json'

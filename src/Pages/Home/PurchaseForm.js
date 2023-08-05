@@ -38,7 +38,7 @@ const  PurchaseForm = ({tool,setTool}) => {
            price: quantity*price
         }
         console.log(order, 'order');
-        fetch('https://manufacturer-website-t9g0.onrender.com/order',{
+        fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/order',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json',

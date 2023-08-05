@@ -10,7 +10,7 @@ const OrderPayment = () => {
     const {id}= useParams()
     const [orderId, setOrderId] =useState({})
     useEffect(()=>{
-        const url =`https://manufacturer-website-t9g0.onrender.com/order/${id}`
+        const url =`https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/order/${id}`
         fetch(url, {
             method:'GET',
             headers: {

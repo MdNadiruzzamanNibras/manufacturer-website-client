@@ -29,7 +29,7 @@ const AddProducts = () => {
                      image: image
                  }
              
-                fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/tools',{
+                fetch('https://manufacturer-website-t9g0.onrender.com/tools',{
                     method:'POST',
                     headers: {
                      'content-type': 'application/json',

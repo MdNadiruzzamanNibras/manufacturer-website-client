@@ -4,7 +4,7 @@ const Overtaking = () => {
     return (
         <div className="hero min-h-screen bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
-    <img src={overtake} className="max-w-sm rounded-lg shadow-2xl " />
+    <img src={overtake} className="lg:max-w-sm mt-16 rounded-lg shadow-2xl " />
     <div>
       <h1 className="text-5xl mb-4 font-bold">Rules for overtaking:</h1>
       <p className="py-1">  1. You have to control the speed of your motorcycle.</p>

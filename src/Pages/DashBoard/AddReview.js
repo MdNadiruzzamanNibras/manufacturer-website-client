@@ -12,7 +12,7 @@ const AddReview = () => {
                 rating : event.target.rating.value ,
         }
 
-        fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/review',{
+        fetch('https://manufacturer-website-t9g0.onrender.com/review',{
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'

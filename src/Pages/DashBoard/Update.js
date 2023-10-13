@@ -19,7 +19,7 @@ const Update = () => {
 
         const updateUser={name,email, phone, address, linkedin}
         console.log(name,email, phone, address);
-        fetch(`https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/profile/${user?.email}`,
+        fetch(`https://manufacturer-website-t9g0.onrender.com/profile/${user?.email}`,
         {
             method:'PUT',
             headers:{

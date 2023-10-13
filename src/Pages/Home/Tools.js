@@ -5,11 +5,13 @@ import { useQuery } from 'react-query';
 
 const Tools = () => {
     
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/tools').then(res => res.json()));
+    const { data: tools, isLoading, isError} = useQuery('tools', () => fetch('https://manufacturer-website-t9g0.onrender.com/tools').then(res => res.json()));
     if (isLoading) {
         return <Loading></Loading>
     }
-   
+    if (isError) {
+        return <p>{ 'something wrong'}</p>
+   }
     const newTools =[...tools].reverse()
 
     return (

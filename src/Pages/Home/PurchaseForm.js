@@ -38,7 +38,7 @@ const  PurchaseForm = ({tool,setTool}) => {
            price: quantity*price
         }
         console.log(order, 'order');
-        fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/order',{
+        fetch('https://manufacturer-website-t9g0.onrender.com/order',{
             method:'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -60,17 +60,17 @@ const  PurchaseForm = ({tool,setTool}) => {
      }
     
     return (
-        <div className="card  w-96 mx-auto ">
+        <div className="card  w-96  ">
             <h2  className='text-2xl text-center mt-2 font-bold text-purple-700'>Purchase Form</h2>
   <div className="card-body">
    <form onSubmit={handleOrder}>
-   <input type="text" value={tool?.name}   className="input input-bordered w-full max-w-xs" /><br />
-   <input type="text" value={tool?.price}  className="input input-bordered w-full max-w-xs" /><br />
-   <input type="text" value={user?.displayName}   className="input input-bordered w-full max-w-xs" /><br />
-   <input type="text" value={user?.email}   className="input input-bordered w-full max-w-xs" /><br />
-   <input type="number" name="phone" placeholder="Phone Number"  className="input input-bordered w-full max-w-xs" /><br />
-  <input type="number"  name="quantity" placeholder="Amount of tool"  className="input input-bordered  max-w-xs" /> <br />
-      <input type="submit"   className='btn w-full max-w-xs text-white' value="Order Now" />      
+   <input type="text" value={tool?.name}   className="input input-bordered w-full max-w-xs my-4" /><br />
+   <input type="text" value={tool?.price}  className="input input-bordered w-full max-w-xs my-2" /><br />
+   <input type="text" value={user?.displayName}   className="input input-bordered w-full max-w-xs my-2" /><br />
+   <input type="text" value={user?.email}  required  className="input input-bordered w-full max-w-xs my-2" /><br />
+   <input type="number" name="phone" required placeholder="Phone Number"  className="input input-bordered w-full max-w-xs my-2" /><br />
+  <input type="number"  name="quantity" required placeholder="Amount of tool"  className="input my-2 input-bordered  max-w-xs" /> <br />
+      <input type="submit"   className='btn my-2 w-full max-w-xs text-white' value="Order Now" />      
       
    </form>
     </div>

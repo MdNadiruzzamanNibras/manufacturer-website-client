@@ -5,7 +5,7 @@ import Loading from '../Shared/Loading';
 
 const ManageOrder = () => {
   const [order, setorder] =useState([])
-    const {data:orders, isLoading}= useQuery('orders',()=>fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/order',{
+    const {data:orders, isLoading}= useQuery('orders',()=>fetch('https://manufacturer-website-t9g0.onrender.com/order',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`
@@ -18,7 +18,7 @@ const ManageOrder = () => {
     const cancelOrder =id=>{
       const processed = window.confirm('Are you sure cancel the order')
       if(processed){
-          const url= `https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/allorder/${id}`
+          const url= `https://manufacturer-website-t9g0.onrender.com/allorder/${id}`
           fetch(url,{
               method:'DELETE',
               headers: {

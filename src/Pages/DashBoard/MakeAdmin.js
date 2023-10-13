@@ -5,7 +5,7 @@ import Loading from '../Shared/Loading';
 
 
 const MakeAdmin = () => {
-    const {data:users, isLoading,refetch}= useQuery('users',()=>fetch('https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/user',{
+    const {data:users, isLoading,refetch}= useQuery('users',()=>fetch('https://manufacturer-website-t9g0.onrender.com/user',{
         method: 'GET',
         headers:{
             authorization: `Bearer ${localStorage.getItem('accessToken')}`

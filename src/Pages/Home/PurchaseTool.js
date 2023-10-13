@@ -9,28 +9,26 @@ const PurchaseTool = () => {
     const {name, image, shortDescription, orderQuantity, availableQuantity, price} = tool
    
    useEffect(()=>{
-    const url =`https://manufacturer-website-server-mdnadiruzzamannibras.vercel.app/tools/${id}`
+    const url =`https://manufacturer-website-t9g0.onrender.com/tools/${id}`
     fetch(url)
     .then(res=>res.json())
     .then(data=> setTool(data))}
     ,[id])
     return (
-        <div className='grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2'>
-          <div className="hero min-h-screen bg-base-200">
-  <div className="hero-content flex-col lg:flex-row">
-    <img src={image} className="max-w-sm rounded-lg shadow-2xl" />
-    <div>
-      <h1 className="text-5xl font-bold">{name}</h1>
-      <p  className='text-lg'>Minimum Order:{orderQuantity} </p>
-    <p  className='text-lg'>Available:{availableQuantity}</p>
-    <p  className='text-lg'>Price: ${price}</p>
-    <p  className='text-xs'>{shortDescription}</p>
+        <div className='flex justify-center items-center h-screen'>
+          <div className="card w-96 bg-base-100 my-6 shadow-xl">
+  <figure className="px-10 pt-10">
+    <img src={image}  alt="tool" className="rounded-xl h-40" />
+  </figure>
+  <div className="card-body items-center text-center">
+    <h2 className="card-title">{name}</h2>
+    <p className=" text-lg text-gray-600 ">Minimum Order: {orderQuantity}</p>
+                <p className=" text-lg text-gray-600 ">Available: {availableQuantity}</p>
+                <p className="text-2xl font-semibold text-indigo-700 ">${price}</p>
+                <p className="text-sm text-gray-600 mb-4">{shortDescription}</p>
     
-     
-     
-    </div>
   </div>
-</div>  
+</div>
 
 
   <PurchaseForm tool={tool}

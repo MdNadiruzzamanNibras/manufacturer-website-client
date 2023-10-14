@@ -61,7 +61,7 @@ const  PurchaseForm = ({tool,setTool}) => {
     
     return (
         <div className="card  w-96  ">
-            <h2  className='text-2xl text-center mt-2 font-bold text-purple-700'>Purchase Form</h2>
+            
   <div className="card-body">
    <form onSubmit={handleOrder}>
    <input type="text" value={tool?.name}   className="input input-bordered w-full max-w-xs my-4" /><br />

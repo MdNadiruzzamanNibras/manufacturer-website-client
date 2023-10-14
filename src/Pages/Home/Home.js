@@ -9,6 +9,7 @@ import ReviewBuyer from './ReviewBuyer';
 import Tools from './Tools';
 import Counter from './Counter';
 import WhyChoose from './WhyChoose';
+import Support from './Support';
 
 const Home = () => {
     return (
@@ -22,10 +23,14 @@ const Home = () => {
             <Overtaking></Overtaking>
                 <NewProduct></NewProduct>
                 <WhyChoose></WhyChoose>
-            <Coundount></Coundount>
+                <Coundount></Coundount>
+                
             </div>
             
-
+            <hr className='w-full h-2 text-slate-600 my-9' />
+            <div className='lg:max-w-7xl lg:mx-auto'>
+                <Support></Support>
+            </div>
         </div>
     );
 };

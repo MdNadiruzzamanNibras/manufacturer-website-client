@@ -2,7 +2,7 @@ import React from 'react';
 import overtake from '../../images/overTake/safety-motorcycle-driving-rules-tips-turn-your-signal-lights-turning-back-view-bike-rider-junction-crossroad-243568164.jpg'
 const Overtaking = () => {
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero py-8 bg-base-200">
   <div className="hero-content flex-col lg:flex-row-reverse">
     <img src={overtake} className="lg:max-w-sm mt-16 rounded-lg shadow-2xl " />
     <div>

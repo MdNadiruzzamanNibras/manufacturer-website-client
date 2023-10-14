@@ -25,6 +25,7 @@ import Update from './Pages/DashBoard/Update';
 import Protfolion from './Pages/Profolio/Protfolion';
 import Blog from './Pages/Bolgs/Blog';
 import Loading from './Pages/Shared/Loading';
+import Chat from './Pages/Shared/Chat';
 
 function App() {
   return (
@@ -53,7 +54,10 @@ function App() {
         
             <Route path='*' element={<NotFound/>}></Route>
      </Routes>
-     <ToastContainer/>
+      <ToastContainer />
+      {/* <div className=' flex justify-end lg:mr-40'>
+        <Chat></Chat>
+      </div> */}
      <Footer></Footer>
     </div>
   );

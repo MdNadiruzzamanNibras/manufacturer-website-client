@@ -7,17 +7,21 @@ import Overtaking from './Overtaking';
 import ReviewBuyer from './ReviewBuyer';
 
 import Tools from './Tools';
+import Counter from './Counter';
+import WhyChoose from './WhyChoose';
 
 const Home = () => {
     return (
         <div>
             <Banner></Banner>
             <div className='lg:max-w-7xl lg:mx-auto'>
+                <Counter></Counter>
             <Tools></Tools>
             <BusinessSummary></BusinessSummary>
             <ReviewBuyer></ReviewBuyer>
             <Overtaking></Overtaking>
-            <NewProduct></NewProduct>
+                <NewProduct></NewProduct>
+                <WhyChoose></WhyChoose>
             <Coundount></Coundount>
             </div>
             

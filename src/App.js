@@ -55,9 +55,9 @@ function App() {
             <Route path='*' element={<NotFound/>}></Route>
      </Routes>
       <ToastContainer />
-      {/* <div className=' flex justify-end lg:mr-40'>
+      <div className=' flex justify-end lg:mr-40'>
         <Chat></Chat>
-      </div> */}
+      </div>
      <Footer></Footer>
     </div>
   );

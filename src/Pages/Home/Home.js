@@ -10,6 +10,8 @@ import Tools from './Tools';
 import Counter from './Counter';
 import WhyChoose from './WhyChoose';
 import Support from './Support';
+import ReachUS from './ReachUS';
+
 
 const Home = () => {
     return (
@@ -30,7 +32,9 @@ const Home = () => {
             <hr className='w-full h-2 text-slate-600 my-9' />
             <div className='lg:max-w-7xl lg:mx-auto'>
                 <Support></Support>
+                <ReachUS></ReachUS>
             </div>
+            
         </div>
     );
 };

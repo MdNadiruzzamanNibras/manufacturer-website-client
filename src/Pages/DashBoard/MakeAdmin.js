@@ -15,7 +15,7 @@ const MakeAdmin = () => {
         return <Loading/>
     }
     return (
-            <div >
+            <div  className='container mx-auto'>
                  <div className="overflow-x-auto">
                 <table className="table w-full">
                     <thead>

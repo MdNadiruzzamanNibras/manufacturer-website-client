@@ -6,7 +6,7 @@ import {  AiFillLock} from 'react-icons/ai';
 
 const Support = () => {
     return (
-        <div className='grid lg:grid-cols-4 gap-3 mb-9'>
+        <div className='grid lg:grid-cols-4 gap-3  my-20'>
             <div className='flex '>
                 <div><p className='m-2 pr-2'><BiMap /></p></div>
                  <div><h4 className='text-xl font-semibold'>Free shipping in Bangladesh

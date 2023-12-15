@@ -29,12 +29,15 @@ const Home = () => {
                 
             </div>
             
-            <hr className='w-full h-2 text-slate-600 my-9' />
+            <hr className='w-full h-1 text-slate-600 my-9 shadow-md' />
             <div className='lg:max-w-7xl lg:mx-auto'>
                 <Support></Support>
+                
+            </div>
+             <hr className='w-full h-2 text-3xl text  bg-blue-600 shadow-md '/>
+            <div className='lg:max-w-7xl lg:mx-auto'>
                 <ReachUS></ReachUS>
             </div>
-            
         </div>
     );
 };

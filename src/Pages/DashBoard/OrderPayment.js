@@ -25,7 +25,7 @@ const OrderPayment = () => {
 
           
     return (
-        <div>
+        <div className='container mx-auto'>
             <div className="card w-50 max-w-md bg-base-100 shadow-xl my-12">
                 <div className="card-body">
                     <p  className="text-success font-bold">Hello, {orderId?.BuyerName}</p>

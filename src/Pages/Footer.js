@@ -4,9 +4,31 @@ const Footer = () => {
   const today = new Date()
   const year = today.getFullYear()
     return (
-        <div className=''>
+      <div className=''>
+        <footer className="footer p-10 bg-neutral text-neutral-content">
+  <nav className='lg:ml-32'>
+    <header className="footer-title">Services</header> 
+    <a className="link link-hover">Branding</a>
+    <a className="link link-hover">Design</a>
+    <a className="link link-hover">Marketing</a>
+    <a className="link link-hover">Advertisement</a>
+  </nav> 
+  <nav>
+    <header className="footer-title">Company</header> 
+    <a className="link link-hover">About us</a>
+    <a className="link link-hover">Contact</a>
+    <a className="link link-hover">Jobs</a>
+    <a className="link link-hover">Press kit</a>
+  </nav> 
+  <nav>
+    <header className="footer-title">Legal</header> 
+    <a className="link link-hover">Terms of use</a>
+    <a className="link link-hover">Privacy policy</a>
+    <a className="link link-hover">Cookie policy</a>
+  </nav>
+</footer>
            <footer className="footer p-10  bg-neutral text-neutral-content">
-  <div>
+  <div className='lg:ml-32'>
     
     <p className='text-2xl font-extrabold'>Redline Motorsports Ltd.</p><p className='font-bold'>Redline Motorsports Ltd. Since 1992</p>
     <p className='font-bold'>Redline Motorsports Ltd. copyright © {year}</p>

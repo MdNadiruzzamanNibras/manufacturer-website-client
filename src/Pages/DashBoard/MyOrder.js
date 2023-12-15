@@ -56,7 +56,7 @@ const MyOrder = () => {
   }
 
   return (
-    <div>
+    <div className='container mx-auto'>
       <h3>My order: {orders?.length}</h3>
       <div className="overflow-x-auto">
         <table className="table w-full">

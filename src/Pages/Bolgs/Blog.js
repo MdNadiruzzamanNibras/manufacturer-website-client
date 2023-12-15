@@ -1,8 +1,9 @@
 import React from 'react';
-
+import bike from '../../images/bike10.jpg'
 const Blog = () => {
     return (
         <div className='text-center mx-11 lg:my-24'>
+            
             <h1  className='text-3xl'>How will you improve the performance of a React Application?</h1>
             <p>This way you improve your react application improve the performance: <br />
                 1.useMemo() use this hook improve your performance. <br />

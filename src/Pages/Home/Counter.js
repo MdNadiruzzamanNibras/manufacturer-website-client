@@ -6,7 +6,7 @@ const Counter = () => {
         <div>
             <div className='grid lg:grid-cols-2 gap-4 mt-5 items-center'>
                 <div className='flex justify-end '>
-                    <div className='text-4xl font-extrabold w-64 h-12  bg-white rounded-lg text-center px-4'>
+                    <div className='text-4xl font-extrabold w-72 h-16 pt-2 text-blue-600  bg-white rounded-lg text-center px-4'>
                     <CountUp start={100000}
   end={82349843}
   duration={4.3} />
